@@ -45,3 +45,8 @@ $ bundle install --path vendor/bundle
 $ bundle exec rails s
 で rails が動くか確認する
 ```
+
+## SourceTree にリポジトリを追加
+1. Sourcetreeを開く
+2. ファイル→開く でcloneしたフォルダを指定
+3. おしまい！
