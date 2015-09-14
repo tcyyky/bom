@@ -26,7 +26,7 @@ if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-$ brew install rbenv ruby-build git
+$ brew install rbenv ruby-build git open-ssl readline libyaml
 $ rbenv install 2.2.2
 $ rbenv local 2.2.2
 $ rbenv rehash
