@@ -36,8 +36,12 @@ $ rbenv exec gem install bundler
 
 ## ローカル環境でrailsを走らせるための環境構築
 
-```sh
-git clone git@github.com:yorisilo/bom.git
-bundle install --path vendor/bundle
+http://qiita.com/syougun360/items/013229aeddec08121474
 
+```sh
+$ git clone git@github.com:yorisilo/bom.git
+$ bundle install --path vendor/bundle
+
+$ bundle exec rails s
+で rails が動くか確認する
 ```
