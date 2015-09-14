@@ -38,6 +38,6 @@ $ rbenv exec gem install bundler
 
 ```sh
 git clone git@github.com:yorisilo/bom.git
-bundle install
+bundle install --path vendor/bundle
 
 ```
