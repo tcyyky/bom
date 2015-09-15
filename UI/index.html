@@ -16,6 +16,13 @@
       </div>
       <div class="app-content">
         <div class="app-section">
+
+          <canvas id="canvasElem" width="400" height="400"></canvas>
+          <br>
+          <button onclick="stanp(0)">青</button>
+          <br>
+          <button onclick="stanp(1)">男</button>
+
           <div class="app-button" data-target="page2">Go to Page 2</div>
         </div>
       </div>
@@ -31,11 +38,11 @@
       </div>
     </div>
 
-    <script src= "javascript/zepto.js"></script>
-    <script src= "javascript/app.min.js"></script>
-    <script src= "javascript/jquery-2.1.4.min.js"></script>
-    <script src= "javascript/canvas-toBlob.js" ></script>
-    <script src= "javascript/FileSaver.js" ></script>
+    <script src= "javascripts/zepto.js"></script>
+    <script src= "javascripts/app.min.js"></script>
+    <script src= "javascripts/jquery-2.1.4.min.js"></script>
+    <script src= "javascripts/canvas-toBlob.js" ></script>
+    <script src= "javascripts/FileSaver.js" ></script>
     <script>
       App.controller('home', function (page) {
         // put stuff here
