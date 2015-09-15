@@ -242,8 +242,8 @@ p{
     z-index: 999;
  }
 
-
-
+    /* Style for our header texts
+    * --------------------------------------- */
     h1{
         font-size: 5em;
         font-family: arial,helvetica;
@@ -256,41 +256,49 @@ p{
     * --------------------------------------- */
     .section{
         text-align:center;
-        overflow: hidden;
-    }
-
-    #myVideo{
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        top:0;
-        right:0;
-        width: 100%;
-        height: 100%;
-        background-size: 100% 100%;
-        background-color: black; /* in case the video doesn't fit the whole page*/
-        background-image: /* our video */;
-        background-position: center center;
-        background-size: contain;
-        object-fit: cover; /*cover video background */
-        z-index:3;
     }
 
 
-
-    /* Layer with position absolute in order to have it over the video
+    /* Backgrounds will cover all the section
     * --------------------------------------- */
-    #section0 .layer{
-        position: absolute;
-        z-index: 4;
-        width: 100%;
-        left: 0;
-        top: 43%;
+    .section{
+        background-size: cover;
+    }
+    .slide{
+        background-size: cover;
     }
 
-    /*solves problem with overflowing video in Mac with Chrome */
+    /* Defining each section background and styles
+    * --------------------------------------- */
     #section0{
-        overflow: hidden;
+        background-image: url(../images/map.jpg);
+        padding: 0 0 0 0;
+    }
+    #topmap {
+
+    }
+    #section2{
+        background-image: url(../imgs/bg3.jpg);
+        padding: 6% 0 0 0;
+    }
+    #section3{
+        background-image: url(../imgs/bg4.jpg);
+        padding: 6% 0 0 0;
+    }
+    #section3 h1{
+        color: #000;
+    }
+
+
+    /*Adding background for the slides
+    * --------------------------------------- */
+    #slide1{
+        background-image: url(../imgs/bg2.jpg);
+        padding: 6% 0 0 0;
+    }
+    #slide2{
+        background-image: url(../imgs/bg5.jpg);
+        padding: 6% 0 0 0;
     }
 
 
