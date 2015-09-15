@@ -1,8 +1,17 @@
-var fileArry = ['./images/blue.png','./images/yellow.png'
-                ,'./images/red.png', './images/man2.png'
-                ,'./images/woman.png', './images/youjo.png'
-                ,'./images/hamburger.png', './images/youjo.png'
-                ];
+var board_num = 0;
+
+var left = ['man.png',　'woman.png'
+            ,'youjo.png',　'hamburger.png'
+            ,'youjo.png'];
+var center = ['man.png',　'woman.png'
+            ,'youjo.png',　'hamburger.png'
+            ,'youjo.png'];
+var right = ['man.png',　'woman.png'
+            ,'youjo.png',　'hamburger.png'
+            ,'youjo.png'];
+
+var board = ['./images/board/blue.png','./images/board/yellow.png'
+                ,'./images/board/red.png'];
 
 var numMaterials = fileArry.length;
 var loadedCounter = 0;
@@ -11,7 +20,7 @@ var canvas = document.getElementById('canvasElem');
 var ctx = canvas.getContext('2d');
 var type = 'image/png';
 
-function stanp(num) {
+function stamp(num) {
     var img = new Image();
 
     img.onload = (function() {

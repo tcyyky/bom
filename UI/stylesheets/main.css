@@ -271,8 +271,11 @@ p{
     /* Defining each section background and styles
     * --------------------------------------- */
     #section0{
-        background-image: url(../imgs/bg1.jpg);
-        padding: 30% 0 0 0;
+        background-image: url(../images/map.jpg);
+        padding: 0 0 0 0;
+    }
+    #topmap {
+
     }
     #section2{
         background-image: url(../imgs/bg3.jpg);

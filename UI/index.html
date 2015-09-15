@@ -40,23 +40,29 @@
 
 
 <div id="fullpage">
-    <div class="section " id="section0"><h1>fullPage.js</h1></div>
+    <div class="section " id="section0">
+<!--         <h1>SignMaker</h1>
+        <img src="images/map.jpg" id="topmap"> -->
+    </div>
     <div class="section" id="section1">
-        <div class="slide" id="slide1"><canvas id="canvasElem" width="400" height="400"></canvas>
+        <div class="slide" id="slide1">
+        <canvas id="canvasElem" width="400" height="400"></canvas>
         <br>
-        <button onclick="stanp(0)">青</button>
-        <button onclick="stanp(1)">注意</button>
-        <button onclick="stanp(2)">警告</button><br>
-        <button onclick="stanp(3)">男性</button>
-        <button onclick="stanp(4)">女性</button>
-        <button onclick="stanp(5)">幼女</button>
-        <button onclick="stanp(6)">ハンバーガー</button>
+        <button onclick="stamp(0)">青</button>
+        <button onclick="stamp(1)">注意</button>
+        <button onclick="stamp(2)">警告</button><br>
+        <button onclick="stamp(3)">男性</button>
+        <button onclick="stamp(4)">女性</button>
+        <button onclick="stamp(5)">幼女</button>
+        <button onclick="stamp(6)">ハンバーガー</button>
         </div>
         <div class="slide" id="slide2"><h1>Totally customizable</h1></div>
     </div>
     <div class="section" id="section2"><h1>Lovely images <br />for a lovely page</h1></div>
     <div class="section" id="section3"><h1>One Image = One thousand words</h1></div>
 </div>
-
+<script src= "javascripts/canvas-toBlob.js" ></script>
+<script src= "javascripts/FileSaver.js" ></script>
+<script src= "javascripts/pngExpoter.js" ></script>
 </body>
 </html>
