@@ -4,6 +4,7 @@
     <title>My App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="stylesheets/app.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <style>
       /* TODO */
     </style>
@@ -15,14 +16,9 @@
         <div class="app-title">Home page</div>
       </div>
       <div class="app-content">
+      <center><img src="images/map.jpg" width="300px"></center>
+
         <div class="app-section">
-
-          <canvas id="canvasElem" width="400" height="400"></canvas>
-          <br>
-          <button onclick="stanp(0)">青</button>
-          <br>
-          <button onclick="stanp(1)">男</button>
-
           <div class="app-button" data-target="page2">Go to Page 2</div>
         </div>
       </div>
@@ -34,7 +30,16 @@
         <div class="app-title">Page 2</div>
       </div>
       <div class="app-content">
-        Page 2 is lonely
+          <canvas id="canvasElem" width="400" height="400"></canvas>
+          <br>
+          <button onclick="stanp(0)">青</button>
+          <button onclick="stanp(1)">注意</button>
+          <button onclick="stanp(2)">警告</button><br>
+          <button onclick="stanp(3)">男性</button>
+          <button onclick="stanp(4)">女性</button>
+          <button onclick="stanp(5)">幼女</button>
+          <button onclick="stanp(6)">ハンバーガー</button>
+          
       </div>
     </div>
 
@@ -43,6 +48,7 @@
     <script src= "javascripts/jquery-2.1.4.min.js"></script>
     <script src= "javascripts/canvas-toBlob.js" ></script>
     <script src= "javascripts/FileSaver.js" ></script>
+    <script src= "javascripts/pngExpoter.js" ></script>
     <script>
       App.controller('home', function (page) {
         // put stuff here
