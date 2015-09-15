@@ -1,68 +1,84 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-    <link rel="stylesheet" href="stylesheets/app.min.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <style>
-      /* TODO */
-    </style>
-  </head>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-  <body>
-    <div class="app-page" data-page="home">
-      <div class="app-topbar">
-        <div class="app-title">Home page</div>
-      </div>
-      <div class="app-content">
-      <center><img src="images/map.jpg" width="300px"></center>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Background video - fullPage.js</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage full-screen backgrounds." />
+	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
+	<meta name="Resource-type" content="Document" />
 
-        <div class="app-section">
-          <div class="app-button" data-target="page2">Go to Page 2</div>
-        </div>
-      </div>
-    </div>
+	<link rel="stylesheet" type="text/css" href="./stylesheets/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="./stylesheets/main.css" />
+	<style>
 
-    <div class="app-page" data-page="page2">
-      <div class="app-topbar">
-        <div class="app-button left" data-back data-autotitle></div>
-        <div class="app-title">Page 2</div>
-      </div>
-      <div class="app-content">
-          <canvas id="canvasElem" width="400" height="400"></canvas>
-          <br>
-          <button onclick="stanp(0)">青</button>
-          <button onclick="stanp(1)">注意</button>
-          <button onclick="stanp(2)">警告</button><br>
-          <button onclick="stanp(3)">男性</button>
-          <button onclick="stanp(4)">女性</button>
-          <button onclick="stanp(5)">幼女</button>
-          <button onclick="stanp(6)">ハンバーガー</button>
-          
-      </div>
-    </div>
+	/* Style for our header texts
+	* --------------------------------------- */
 
-    <script src= "javascripts/zepto.js"></script>
-    <script src= "javascripts/app.min.js"></script>
-    <script src= "javascripts/jquery-2.1.4.min.js"></script>
-    <script src= "javascripts/canvas-toBlob.js" ></script>
-    <script src= "javascripts/FileSaver.js" ></script>
-    <script src= "javascripts/pngExpoter.js" ></script>
-    <script>
-      App.controller('home', function (page) {
-        // put stuff here
-      });
+	</style>
 
-      App.controller('page2', function (page) {
-        // put stuff here
-      });
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
 
-      try {
-        App.restore();
-      } catch (err) {
-        App.load('home');
-      }
-    </script>
-  </body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="./javascripts/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="./javascripts/examples.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: true,
+				sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
+				afterRender: function(){
+
+
+					//playing the video
+					$('video').get(0).play();
+				}
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+
+<div id="fullpage">
+	<div class="section " id="section0">
+		<video autoplay loop muted id="myVideo">
+			<source src="imgs/flowers.mp4" type="video/mp4">
+			<source src="imgs/flowers.webm" type="video/webm">
+		</video>
+
+		<div class="layer">
+			<h1>fullPage.js videos</h1>
+		</div>
+	</div>
+	<div class="section" id="section1">
+	    <div class="slide" id="slide1"><h1>Slide Backgrounds</h1></div>
+	    <div class="slide" id="slide2"><h1>Totally customizable</h1></div>
+	</div>
+	<div class="section" id="section2"><h1>Lovely images <br />for a lovely page</h1></div>
+	<div class="section" id="section3"><canvas id="canvasElem" width="400" height="400"></canvas>
+<br>
+<button onclick="stanp(0)">青</button>
+<button onclick="stanp(1)">注意</button>
+<button onclick="stanp(2)">警告</button><br>
+<button onclick="stanp(3)">男性</button>
+<button onclick="stanp(4)">女性</button>
+<button onclick="stanp(5)">幼女</button>
+<button onclick="stanp(6)">ハンバーガー</button></div>
+</div>
+
+<script src= "javascripts/canvas-toBlob.js" ></script>
+<script src= "javascripts/FileSaver.js" ></script>
+<script src= "javascripts/pngExpoter.js" ></script>
+
+</body>
 </html>
