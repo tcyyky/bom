@@ -2,83 +2,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Background video - fullPage.js</title>
-	<meta name="author" content="Alvaro Trigo Lopez" />
-	<meta name="description" content="fullPage full-screen backgrounds." />
-	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
-	<meta name="Resource-type" content="Document" />
-
-	<link rel="stylesheet" type="text/css" href="./stylesheets/jquery.fullPage.css" />
-    <link rel="stylesheet" type="text/css" href="./stylesheets/main.css" />
-	<style>
-
-	/* Style for our header texts
-	* --------------------------------------- */
-
-	</style>
-
-	<!--[if IE]>
-		<script type="text/javascript">
-			 var console = { log: function() {} };
-		</script>
-	<![endif]-->
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-
-	<script type="text/javascript" src="./javascripts/jquery.fullPage.js"></script>
-	<script type="text/javascript" src="./javascripts/examples.js"></script>
-
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				verticalCentered: true,
-				sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
-				afterRender: function(){
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Background images - fullPage.js</title>
+    <meta name="author" content="Alvaro Trigo Lopez" />
+    <meta name="description" content="fullPage full-screen backgrounds." />
+    <meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
+    <meta name="Resource-type" content="Document" />
 
 
-					//playing the video
-					$('video').get(0).play();
-				}
-			});
-		});
-	</script>
+    <link rel="stylesheet" type="text/css" href="stylesheets//jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="./javascripts/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="./javascripts/examples.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                verticalCentered: false
+
+            });
+        });
+    </script>
 
 </head>
 <body>
 
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
 
 <div id="fullpage">
-	<div class="section " id="section0">
-		<video autoplay loop muted id="myVideo">
-			<source src="imgs/flowers.mp4" type="video/mp4">
-			<source src="imgs/flowers.webm" type="video/webm">
-		</video>
-
-		<div class="layer">
-			<h1>fullPage.js videos</h1>
-		</div>
-	</div>
-	<div class="section" id="section1">
-	    <div class="slide" id="slide1"><h1>Slide Backgrounds</h1></div>
-	    <div class="slide" id="slide2"><h1>Totally customizable</h1></div>
-	</div>
-	<div class="section" id="section2"><h1>Lovely images <br />for a lovely page</h1></div>
-	<div class="section" id="section3"><canvas id="canvasElem" width="400" height="400"></canvas>
-<br>
-<button onclick="stanp(0)">青</button>
-<button onclick="stanp(1)">注意</button>
-<button onclick="stanp(2)">警告</button><br>
-<button onclick="stanp(3)">男性</button>
-<button onclick="stanp(4)">女性</button>
-<button onclick="stanp(5)">幼女</button>
-<button onclick="stanp(6)">ハンバーガー</button></div>
+    <div class="section " id="section0"><h1>fullPage.js</h1></div>
+    <div class="section" id="section1">
+        <div class="slide" id="slide1"><canvas id="canvasElem" width="400" height="400"></canvas>
+        <br>
+        <button onclick="stanp(0)">青</button>
+        <button onclick="stanp(1)">注意</button>
+        <button onclick="stanp(2)">警告</button><br>
+        <button onclick="stanp(3)">男性</button>
+        <button onclick="stanp(4)">女性</button>
+        <button onclick="stanp(5)">幼女</button>
+        <button onclick="stanp(6)">ハンバーガー</button>
+        </div>
+        <div class="slide" id="slide2"><h1>Totally customizable</h1></div>
+    </div>
+    <div class="section" id="section2"><h1>Lovely images <br />for a lovely page</h1></div>
+    <div class="section" id="section3"><h1>One Image = One thousand words</h1></div>
 </div>
-
-<script src= "javascripts/canvas-toBlob.js" ></script>
-<script src= "javascripts/FileSaver.js" ></script>
-<script src= "javascripts/pngExpoter.js" ></script>
 
 </body>
 </html>
