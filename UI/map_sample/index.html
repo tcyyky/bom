@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+  	<meta name="viewport" content="user-scalable=no">
+
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0px; padding: 0px }
+      #map { height: 100% }
+    </style>
+
+    <script src="http://maps.google.com/maps/api/js?v=3&sensor=false"
+        type="text/javascript" charset="UTF-8"></script>
+	
+    <script type="text/javascript">
+
+    //<![CDATA[
+
+    var map;
+    
+    // 初期化。bodyのonloadでinit()を指定することで呼び出してます
+    function init() {
+
+    	if (navigator.geolocation) {
+		   	navigator.geolocation.getCurrentPosition(locationEnabled, locationDisabled);
+	   	} else {
+			document.getElementById("geo").innerHTML =  "Geolocationが利用できません";
+	   	}
+	}
+
+	function locationEnabled(pos){
+		locationChanged(pos);
+		//var watchId = navigator.geolocation.watchPosition( locationChanged , locationDisabled) ;
+	}
+
+	function locationChanged(pos){
+
+		var lat = pos.coords.latitude;
+		var lng = pos.coords.longitude;
+
+      // Google Mapで利用する初期設定用の変数
+		var latlng = new google.maps.LatLng(lat, lng);
+		var opts = {
+			zoom: 20,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			center: latlng,
+			disableDoubleClickZoom : true,
+			draggable : false,
+			mapTypeControlOptions : false,
+			panControl : false,
+			rotateControl : false,
+			scaleControl : true,
+			streetViewControl : false,
+			zoomControl : false,
+			scrollwheel : false
+		};
+
+		// Mapオブジェクトの生成
+		// getElementById("map")の"map"は、body内の<div id="map">より
+		map = new google.maps.Map(document.getElementById("map"), opts);
+
+		var markers = [];
+		markers[0] = new google.maps.Marker({
+			position: latlng,
+			map: map,
+			title:"現在地",
+			icon : {
+				url: "img/mypoint.png",
+				scaledSize: new google.maps.Size( 50, 50 )
+			},
+			opacity: 1
+        });
+
+		var sign1 = new google.maps.LatLng(lat-0.0001, lng+0.0001);
+        var sign1opt = {
+			position: sign1,
+			map: map,
+			icon : {
+				url: "img/minisign_b.png",
+				scaledSize: new google.maps.Size( 75, 150 ),
+			},
+			opacity: 1,
+			id:"asjfias321p"
+        }
+        markers[1] = new google.maps.Marker(sign1opt);
+
+        var sign2 = new google.maps.LatLng(lat-0.0002, lng-0.0001);
+        markers[1] = new google.maps.Marker({
+			position: sign2,
+			map: map,
+			icon : {
+				url: "img/minisign_r.png",
+				scaledSize: new google.maps.Size( 75, 150 )
+			},
+			opacity: 1
+        });
+
+        var circle = new google.maps.Circle({
+        	map  : map,
+        	center : latlng,
+        	radius : 50,
+        	clickable : false,
+        	draggable : false,
+        	fillColor : "#ffa07a",
+    		strokeColor : "#dda0dd",
+    		strokeWeight : 4
+
+        });
+
+    }
+
+    function locationDisabled(){
+
+    }
+
+    //]]>
+    </script>
+  </head>
+
+  <body onload="init()">
+  	<div id="geo"></div>
+    <div id="map"></div>
+  </body>
+
+</html>
