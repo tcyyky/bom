@@ -1,4 +1,8 @@
-var fileArry = ['./images/blue.png','./images/man2.png'];
+var fileArry = ['./images/blue.png','./images/yellow.png'
+                ,'./images/red.png', './images/man2.png'
+                ,'./images/woman.png', './images/youjo.png'
+                ,'./images/hamburger.png', './images/youjo.png'
+                ];
 
 var numMaterials = fileArry.length;
 var loadedCounter = 0;
@@ -11,7 +15,7 @@ function stanp(num) {
     var img = new Image();
 
     img.onload = (function() {
-        ctx.drawImage(img, 0, 0);
+        ctx.drawImage(img, 0, 0, 400, 400);
     });
 
     img.src = fileArry[num];
