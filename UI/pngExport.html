@@ -2,15 +2,17 @@
 <head>
     <title>My App</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheets/edit.css">
 </head>
 <body>
-<canvas id="canvasElem" width="400" height="400"></canvas>
-<br>
+<div id="canvas">
+    <canvas id="canvasElem" width="400" height="400"></canvas>
+</div>
 <button onclick="change_board(1)">‎規制</button>
 <button onclick="change_board(2)">注意</button>
 <button onclick="change_board(3)">禁止</button>
 <h3>Left</h3>
-    <button onclick="stamp('left', 'ame')">雨</button>
+    <button onclick="stamp('left', 'ame')"><img src=""></button>
     <button onclick="stamp('left', 'car')">車</button>
     <button onclick="stamp('left', 'cat')">ねこ</button> <br>
     <button onclick="stamp('left', 'karaoke')">カラオケ</button>
