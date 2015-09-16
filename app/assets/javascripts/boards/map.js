@@ -55,7 +55,7 @@ $(function(){
 			title:"現在地",
 			icon : {
 				url: "assets/mypoint.png",
-				scaledSize: new google.maps.Size( 50, 50 )
+				scaledSize: new google.maps.Size( 50, 100 )
 			},
 			opacity: 1
 		};
