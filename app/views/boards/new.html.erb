@@ -1,0 +1,16 @@
+<h1>標識のエディット画面</h1>
+
+
+
+<%= form_for :board, url: boards_path do |f| %>
+  <p>
+    <%= f.label :caption, "caption" %><br>
+    <%= f.text_area :caption, cols: 60, rows: 8 %>
+  </p>
+
+  <!-- image latitude longitude good bad username -->
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
