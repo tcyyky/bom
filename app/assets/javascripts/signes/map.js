@@ -6,6 +6,7 @@ $(function(){
 	var signes = []; //標識のマーカー
 	var myPos; //現在位置のマーカー
 	var circle; //円
+	var circle2; //円2
 	var prevLatlng = new google.maps.LatLng(0, 0);
 
 
@@ -28,15 +29,17 @@ $(function(){
 		// Mapのオプション
 		var mapOpts = {
 			zoom: 20,
+			maxZoom : 20,
+			minZoom : 18,
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			center: latlng,
 			disableDoubleClickZoom : true,
-			draggable : true, //テスト用
+			draggable : false, 
 			panControl : false,
 			rotateControl : false,
 			scaleControl : true,
 			streetViewControl : false,
-			zoomControl : false,
+			zoomControl : true,
 			mapTypeControl : false,
 			scrollwheel : false
 		};
@@ -70,11 +73,25 @@ $(function(){
     		fillOpacity : 0.2
 		};
 
+		var circle2Opts = {
+        	map  : map,
+        	center : latlng,
+        	radius : 3 * radius,
+        	clickable : false,
+        	draggable : false,
+        	fillColor : "#ffa07a",
+    		strokeColor : "#dda0dd",
+    		strokeWeight : 4,
+    		fillOpacity : 0.0
+		};
+
 		// 現在位置マーカーの作成
 		myPos = new google.maps.Marker(myPosOpts);
 		// 円の作成
         circle = new google.maps.Circle(circleOpts);
+        circle2 = new google.maps.Circle(circle2Opts);
 
+        //標識を追加
         addNearbySignes(lat, lng);
 
 		//位置変更を監視
@@ -83,7 +100,7 @@ $(function(){
 
    	/*
    	* 現在位置が更新された時、現在位置マーカーと標識マーカーを更新
-   	* ただし、動きが少なかったり、時間が立ってなかったら更新しない
+   	* ただし、動きが少なかったら更新しない
    	*/
    	function locationChanged(pos){
 
@@ -91,14 +108,15 @@ $(function(){
 		var lng = pos.coords.longitude;
 		var latlng = new google.maps.LatLng(lat, lng);
 
-		//5m動動く かつ 5秒経つ とマップ、現在位置、円を移動、マーカーを更新
+		//5m動動くとマップ、現在位置、円を移動、マーカーを更新
 		var dist = google.maps.geometry.spherical.computeDistanceBetween(prevLatlng, latlng);
 		if (dist > 5){
 			map.panTo(latlng);
 			myPos.setPosition(latlng);
 			circle.setCenter(latlng);
+			circle2.setCenter(latlng);
 
-
+			//標識を追加
 	        addNearbySignes(lat, lng);
 
 	        prevLatlng = latlng;
@@ -111,6 +129,9 @@ $(function(){
     */
     function addNearbySignes (lat, lng) {
 		$.getJSON("/signes/getNearbySignes/"+lat+"/"+lng, null, function(data){
+			signes = null;
+			signes = [];
+
         	$.each(data, function () {
         		var latlng = new google.maps.LatLng(this.lat, this.lng);
 				var dist = google.maps.geometry.spherical.computeDistanceBetween(myPos.getPosition(), latlng);
@@ -128,6 +149,19 @@ $(function(){
 			        }
 			        signes.push(new google.maps.Marker(opt));
 			        // console.log(signes[0].get("id"));
+			    } else if(dist < radius*3) {
+			    	var opt = {
+						position: latlng,
+						map: map,
+						icon : {
+							url: this.icon,
+							scaledSize: new google.maps.Size( 75, 150 ),
+						},
+						opacity : 1,
+						clickable : false,
+						id : this.id
+			        }
+			        signes.push(new google.maps.Marker(opt));
 			    }
         	});
 		});    
