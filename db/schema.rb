@@ -11,39 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150916062648) do
+ActiveRecord::Schema.define(version: 20150916120715) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "image"
     t.text     "caption"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "type"
     t.integer  "good"
     t.integer  "bad"
-    t.string   "username"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "username_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
+  add_index "boards", ["username_id"], name: "index_boards_on_username_id"
+
   create_table "comments", force: :cascade do |t|
-    t.string   "username"
+    t.integer  "username_id"
     t.text     "body"
     t.integer  "board_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "comments", ["board_id"], name: "index_comments_on_board_id"
+  add_index "comments", ["username_id"], name: "index_comments_on_username_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
-    t.integer  "board_id"
-    t.integer  "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "users", ["board_id"], name: "index_users_on_board_id"
-  add_index "users", ["comment_id"], name: "index_users_on_comment_id"
 
 end

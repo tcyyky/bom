@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   #get 'map/index'
 
+  get 'boards/index'
+
+  get 'boards/show'
+
   resources :boards
 
 
@@ -17,7 +21,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'map#index'
+  root 'boards#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
