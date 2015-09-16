@@ -15,7 +15,7 @@ var center = {banzai: 'banzai.png', barerina: 'barerina.png', chair: 'chair.png'
             , ochai: 'ochai.png', skul: 'skul.png'
             , unko: 'unko.png', ushi: 'ushi.png'}
 
-var center = {car: 'car.png', cat: 'cat.png'
+var right = {car: 'car.png', cat: 'cat.png'
             , hamburger: 'hamburger.png', karaoke: 'karaoke.png'
             , kisskidf: 'kisskidf.png', kisskidm: 'kisskidm.png'
             , man: 'man.png', motituki: 'motituki.png'
@@ -32,7 +32,7 @@ var imgObjArry = [];
 var canvas = document.getElementById('canvasElem');
 var ctx = canvas.getContext('2d');
 //var type = 'image/png';
-var board_num = 1;
+var board_num = 2;
 
 if (board_num == 1) {
     var img = new Image();
@@ -73,7 +73,7 @@ function stamp(type, name) {
         img.onload = (function() {
             ctx.drawImage(img, 0, 0, 400, 400);
         });
-        if (board_num == 2) {
+        if (board_num == 1) {
             img.src = "./images/center/1_" + center[name];
         } else if (board_num == 2) {
             img.src = "./images/center/2_" + center[name];
@@ -86,7 +86,7 @@ function stamp(type, name) {
         img.onload = (function() {
             ctx.drawImage(img, 0, 0, 400, 400);
         });
-        if (board_num == 3) {
+        if (board_num == 1) {
             img.src = "./images/right/1_" + right[name];
         } else if (board_num == 2) {
             img.src = "./images/right/2_" + right[name];
