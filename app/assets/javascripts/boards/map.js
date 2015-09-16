@@ -128,7 +128,7 @@ $(function(){
     * 新しいマーカーをサーバーから非同期に取得してマップに追加
     */
     function addNearbySignes (lat, lng) {
-		$.getJSON("/signes/getNearbySignes/"+lat+"/"+lng, null, function(data){
+		$.getJSON("/boards/getNearby/"+lat+"/"+lng, null, function(data){
 			signes = null;
 			signes = [];
 
