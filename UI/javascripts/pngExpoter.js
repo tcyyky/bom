@@ -32,26 +32,30 @@ var imgObjArry = [];
 var canvas = document.getElementById('canvasElem');
 var ctx = canvas.getContext('2d');
 //var type = 'image/png';
-var board_num = 2;
+var board_num = 0;
 
-if (board_num == 1) {
-    var img = new Image();
-    img.onload = (function() {
-    ctx.drawImage(img, 0, 0, 400, 400);
-    });
-    img.src = board[0];
-} else if (board_num == 2) {
-    var img = new Image();
-    img.onload = (function() {
-    ctx.drawImage(img, 0, 0, 400, 400);
-    });
-    img.src = board[1];
-} else if (board_num == 3) {
-    var img = new Image();
-    img.onload = (function() {
-    ctx.drawImage(img, 0, 0, 400, 400);
-    });
-    img.src = board[2];
+
+function change_board(num) {
+    board_num = num;
+    if (board_num == 1) {
+        var img = new Image();
+        img.onload = (function() {
+        ctx.drawImage(img, 0, 0, 400, 400);
+        });
+        img.src = board[0];
+    } else if (board_num == 2) {
+        var img = new Image();
+        img.onload = (function() {
+        ctx.drawImage(img, 0, 0, 400, 400);
+        });
+        img.src = board[1];
+    } else if (board_num == 3) {
+        var img = new Image();
+        img.onload = (function() {
+        ctx.drawImage(img, 0, 0, 400, 400);
+        });
+        img.src = board[2];
+    }
 }
 
 
