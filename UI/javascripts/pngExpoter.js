@@ -28,7 +28,7 @@ var right = {car: 'car.png', cat: 'cat.png'
 var board = ['./images/board/blue.png','./images/board/yellow.png'
              ,'./images/board/red.png'];
 
-var imgObjArry = [];
+var displayImg = [];
 var canvas = document.getElementById('canvasElem');
 var ctx = canvas.getContext('2d');
 //var type = 'image/png';
@@ -40,31 +40,32 @@ function change_board(num) {
     if (board_num == 1) {
         var img = new Image();
         img.onload = (function() {
-        ctx.drawImage(img, 0, 0, 400, 400);
+            //ctx.drawImage(img, 0, 0, 400, 400);
+            displayImg[0] = img;
         });
         img.src = board[0];
     } else if (board_num == 2) {
         var img = new Image();
         img.onload = (function() {
-        ctx.drawImage(img, 0, 0, 400, 400);
+            //ctx.drawImage(img, 0, 0, 400, 400);
+            displayImg[0] = img;
         });
         img.src = board[1];
     } else if (board_num == 3) {
         var img = new Image();
         img.onload = (function() {
-        ctx.drawImage(img, 0, 0, 400, 400);
+            //ctx.drawImage(img, 0, 0, 400, 400);
+            displayImg[0] = img;
         });
         img.src = board[2];
     }
+    display();
 }
 
 
 function stamp(type, name) {
     if (type == 'left') {
         var img = new Image();
-        img.onload = (function() {
-            ctx.drawImage(img, 0, 0, 400, 400);
-        });
         if (board_num == 1) {
             img.src = "./images/left/1_" + left[name];
         } else if (board_num == 2) {
@@ -72,11 +73,13 @@ function stamp(type, name) {
         } else if (board_num == 3) {
             img.src = "./images/left/3_" + left[name];
         }
+        img.onload = (function() {
+            // ctx.drawImage(img, 0, 0, 400, 400);
+            displayImg[1] = img;
+        });
+
     } else if (type == 'center') {
         var img = new Image();
-        img.onload = (function() {
-            ctx.drawImage(img, 0, 0, 400, 400);
-        });
         if (board_num == 1) {
             img.src = "./images/center/1_" + center[name];
         } else if (board_num == 2) {
@@ -84,11 +87,13 @@ function stamp(type, name) {
         } else if (board_num == 3) {
             img.src = "./images/center/3_" + center[name];
         }
+        img.onload = (function() {
+            // ctx.drawImage(img, 0, 0, 400, 400);
+            displayImg[2] = img;
+        });
+
     } else if (type == 'right') {
         var img = new Image();
-        img.onload = (function() {
-            ctx.drawImage(img, 0, 0, 400, 400);
-        });
         if (board_num == 1) {
             img.src = "./images/right/1_" + right[name];
         } else if (board_num == 2) {
@@ -96,10 +101,22 @@ function stamp(type, name) {
         } else if (board_num == 3) {
             img.src = "./images/right/3_" + right[name];
         }
+        img.onload = (function() {
+            // ctx.drawImage(img, 0, 0, 400, 400);
+            displayImg[3] = img;
+        });
+
     }
+    display();
 }
 
+function display() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    for (var i in displayImg){
+        ctx.drawImage(displayImg[i], 0, 0, 400, 400);
+    }
+}
 
 // canvas.toBlob(function(blob) {
 //     saveAs(blob, "pretty image.png");
