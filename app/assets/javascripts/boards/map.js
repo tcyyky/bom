@@ -55,7 +55,7 @@ $(function(){
 			title:"現在地",
 			icon : {
 				url: "assets/mypoint.png",
-				scaledSize: new google.maps.Size( 50, 50 )
+				scaledSize: new google.maps.Size( 50, 100 )
 			},
 			opacity: 1
 		};
@@ -128,7 +128,7 @@ $(function(){
     * 新しいマーカーをサーバーから非同期に取得してマップに追加
     */
     function addNearbySignes (lat, lng) {
-		$.getJSON("/signes/getNearbySignes/"+lat+"/"+lng, null, function(data){
+		$.getJSON("/boards/getNearby/"+lat+"/"+lng, null, function(data){
 			signes = null;
 			signes = [];
 
