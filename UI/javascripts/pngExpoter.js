@@ -80,7 +80,6 @@ function stamp(type, name) {
         } else if (board_num == 3) {
             img.src = "./images/center/3_" + center[name];
         }
-        img.src = left[type];
     } else if (type == 'right') {
         var img = new Image();
         img.onload = (function() {
