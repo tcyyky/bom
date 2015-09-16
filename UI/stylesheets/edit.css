@@ -2,6 +2,21 @@ body {
     background-color: #87cefa;
 }
 
+button {
+    background-color: #AADBEA;
+    border-color: #fff;
+    border-style: solid;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
 #canvas {
-    background-image: url(../images/UI parts/UI-make-background.png);
+    background-size:cover;
+    width: 100%;
+    background-image: url(../UI-make-background.png);
+    text-align: center;
+}
+
+.center {
+    text-align: center;
 }
