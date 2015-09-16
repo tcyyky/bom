@@ -1,9 +1,16 @@
 $(function(){
 
+	$(document).ready(function() {
+    	$('#fullpage').fullpage({
+		   anchors: ['map', 'detail'],
+     	});
+	});
+
+
 	var radius = 50; //円の半径
 
 	var map; //マップ
-	var signes = []; //標識のマーカー
+	var boards = []; //標識のマーカー
 	var myPos; //現在位置のマーカー
 	var circle; //円
 	var circle2; //円2
@@ -92,7 +99,7 @@ $(function(){
         circle2 = new google.maps.Circle(circle2Opts);
 
         //標識を追加
-        addNearbySignes(lat, lng);
+        addNearbyBoards(lat, lng);
 
 		//位置変更を監視
 		var watchId = navigator.geolocation.watchPosition( locationChanged , locationDisabled);
@@ -117,7 +124,7 @@ $(function(){
 			circle2.setCenter(latlng);
 
 			//標識を追加
-	        addNearbySignes(lat, lng);
+	        addNearbyBoards(lat, lng);
 
 	        prevLatlng = latlng;
     	}
@@ -127,10 +134,10 @@ $(function(){
     /*
     * 新しいマーカーをサーバーから非同期に取得してマップに追加
     */
-    function addNearbySignes (lat, lng) {
+    function addNearbyBoards (lat, lng) {
 		$.getJSON("/boards/getNearby/"+lat+"/"+lng, null, function(data){
-			signes = null;
-			signes = [];
+			boards = null;
+			boards = [];
 
         	$.each(data, function () {
         		var latlng = new google.maps.LatLng(this.lat, this.lng);
@@ -147,8 +154,16 @@ $(function(){
 						opacity: 1,
 						id : this.id
 			        }
-			        signes.push(new google.maps.Marker(opt));
-			        // console.log(signes[0].get("id"));
+			        boards.push(new google.maps.Marker(opt));
+
+			        google.maps.event.addListener(boards[boards.length-1], 'click', function(){
+			        	$.fn.fullpage.moveTo(2);
+			        	$.getJSON("/boards/"+this.id, null, function(data){
+			        		$("#board-img").attr("src", data.imageUrl);
+			        		$("#board-text").html(data.text);
+			        	})
+			        });
+			        // console.log(boards[0].get("id"));
 			    } else if(dist < radius*3) {
 			    	var opt = {
 						position: latlng,
@@ -161,7 +176,7 @@ $(function(){
 						clickable : false,
 						id : this.id
 			        }
-			        signes.push(new google.maps.Marker(opt));
+			        boards.push(new google.maps.Marker(opt));
 			    }
         	});
 		});    
