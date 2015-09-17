@@ -34,7 +34,6 @@ var ctx = canvas.getContext('2d');
 //var type = 'image/png';
 var board_num = 0;
 
-
 function change_board(num) {
     board_num = num;
     if (board_num == 1) {

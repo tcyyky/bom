@@ -13,7 +13,37 @@
 <button onclick="change_board(2)">注意</button>
 <button onclick="change_board(3)">禁止</button>
 
+<!-- 
+<script type="text/javascript">
+$(function() {
+        $( '#ui-tab > ul' ).tabs({
+          collapsible: true
+        });
+      });
 
+</script>
+
+<div id="ui-tab">
+    <ul>
+        <li><a href="#fragment-1"><span>タブ1</span></a></li>
+        <li><a href="#fragment-2"><span>タブ2</span></a></li>
+        <li><a href="#fragment-3"><span>タブ3</span></a></li>
+    </ul>
+    
+    <div id="fragment-1">
+        <p>タブ1の内容</p>
+    </div>
+    
+    <div id="fragment-2">
+        <p>タブ2の内容</p>
+    </div>
+    
+    <div id="fragment-3">
+        <p>タブ3の内容</p>
+    </div>
+
+</div>
+ -->
 <h3>Left</h3>
     <button onclick="stamp('left', 'ame')"><img src="images/grayIcon/left/ame.png" height="80" width="80"></button>
     <button onclick="stamp('left', 'car')"><img src="images/grayIcon/left/car.png" height="80" width="80"></button>
@@ -67,8 +97,12 @@
     <button onclick="stamp('right', 'hamburger')"><img src="images/grayIcon/right/hamburger.png" height="80" width="80"></button>
 </div>
 
+    <!-- ui tabs.js -->
+    <script type="text/javascript" src="./javascripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./javascripts/jquery-ui.js"></script>
+    <link href="./stylesheets/ui.tabs.css" rel="stylesheet" type="text/css" />
+
 <script src= "javascripts/canvas-toBlob.js" ></script>
 <script src= "javascripts/FileSaver.js" ></script>
 <script src= "javascripts/pngExpoter.js" ></script>
-
 </body>
