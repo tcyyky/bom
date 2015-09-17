@@ -9,6 +9,10 @@
 }
 
 #build-button{
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	width: 100px;
 	z-index: 2;
 }
 
