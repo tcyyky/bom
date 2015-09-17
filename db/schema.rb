@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150916120715) do
+ActiveRecord::Schema.define(version: 20150917031332) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "image"
     t.text     "caption"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "type"
     t.integer  "good"
     t.integer  "bad"
     t.integer  "username_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "back_type"
   end
 
   add_index "boards", ["username_id"], name: "index_boards_on_username_id"
