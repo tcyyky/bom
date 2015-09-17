@@ -6,6 +6,7 @@ class BoardsController < ApplicationController
 	end
 
 	# GET /boards/getNearbyBoards/:lat/:lng
+  # 周辺標識のAPI
 	def getNearby
     c = Board.arel_table
     res = Board.where(c[:latitude].gt(30) 
@@ -22,6 +23,7 @@ class BoardsController < ApplicationController
   end
 
   # GET /boards/:id
+  # 標識詳細のAPI
   def show
   	c = Board.arel_table
     res = Board.find(params[:id]).to_json 

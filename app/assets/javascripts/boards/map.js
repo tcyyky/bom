@@ -80,26 +80,38 @@ function initMap (pos) {
     fillOpacity : 0.2
   };
 
-  var circle2Opts = {
-    map  : map,
-    center : latlng,
-    radius : 3 * radius,
-    clickable : false,
-    draggable : false,
-    fillColor : "#ffa07a",
-    strokeColor : "#dda0dd",
-    strokeWeight : 4,
-    fillOpacity : 0.0
-  };
+  // var circle2Opts = {
+  //   map  : map,
+  //   center : latlng,
+  //   radius : 3 * radius,
+  //   clickable : false,
+  //   draggable : false,
+  //   fillColor : "#ffa07a",
+  //   strokeColor : "#dda0dd",
+  //   strokeWeight : 4,
+  //   fillOpacity : 0.0
+  // };
 
   // 現在位置マーカーの作成
   myPos = new google.maps.Marker(myPosOpts);
   // 円の作成
   circle = new google.maps.Circle(circleOpts);
-  circle2 = new google.maps.Circle(circle2Opts);
+  // circle2 = new google.maps.Circle(circle2Opts);
 
   //標識を追加
   addNearbyBoards(lat, lng);
+
+//画像のoverlay(無理そう。。。)
+// var sw=new google.maps.LatLng(35.6643203,139.7305972);    /* 南西 */ 
+// var ne=new google.maps.LatLng(35.6678068,139.7329419);        /* 北東 */
+
+// var imageBounds = new google.maps.LatLngBounds(sw, ne);
+// var overlay = new google.maps.GroundOverlay(
+//                 "/assets/overlay.png",
+//                 imageBounds
+//             );
+// overlay.setMap(map);
+//ここまで
 
   //位置変更を監視
   var watchId = navigator.geolocation.watchPosition( locationChanged , locationDisabled);
