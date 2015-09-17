@@ -1,18 +1,34 @@
 <%= javascript_include_tag "http://maps.google.com/maps/api/js?v=3&sensor=false", "boards/map.js" %>
 
 <div id="fullpage">
-<div class="section">
+  <div class="section">
     <div id="map"></div>
-</div>
-<div class="section">
-	<div>
-		<a href="#m">戻る</a>
-	</div>
-	<img src="" id="board-img">
-	<p id="board-text"></p>
-	<ul>
-		<li><button>Good</button></li>
-		<li><button>Bad</button></li>
-	</ul>
-</div>
+  </div>
+  <div class="section">
+	  <div>
+		  <a href="#m">戻る</a>
+	  </div>
+	  <img src="" id="board-img">
+	  <p id="board-text"></p>
+	  <ul>
+		  <li><button>Good</button></li>
+		  <li><button>Bad</button></li>
+	  </ul>
+    <table>
+      <% @boards.each do |board| %>
+
+        <tr>
+          <td><%= board.username %></td>
+          <td><%= image_tag(board.image_url) %></td>
+          <td><%= link_to 'Show', board %></td>
+          <td><%= link_to 'Edit', edit_board_path(board) %></td>
+          <td><%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </table>
+
+    <br/>
+    <%= link_to 'New Board', new_board_path %>
+
+  </div>
 </div>

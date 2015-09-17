@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User Name:</b>
+  <%= @board.username %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag(@board.image_url) %>
+</p>
+
+
+<%= link_to 'Edit', edit_board_path(@board) %> |
+<%= link_to 'Back', boards_path %>
