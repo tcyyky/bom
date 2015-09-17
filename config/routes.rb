@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   # get 'boards/index'
   # get 'boards/show'
 
-
   resources :boards
   get 'boards/getNearby/:lat/:lng' => 'boards#getNearby', :format => false, :lat => /.*/, :lng => /.*/
+  get 'boards/sendFeedback/:gb/:ud' => 'boards#sendFeedback'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

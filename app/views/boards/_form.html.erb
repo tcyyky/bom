@@ -17,18 +17,19 @@
   </div>
   <div class="field">
     <p>
-    <%= image_tag(@board.image_url(:thumbnail), :width => 80, :height => 80) %>
-    <%= f.file_field :image %>
+      <%= image_tag(@board.image_url(:thumbnail), :width => 80, :height => 80) %>
+      <%= f.file_field :image %>
     </p>
 
     <p>
-    <%= f.label :remote_image_url, "or image URL" %>
-    <%= f.text_field :remote_image_url %>
+      <%= f.label :remote_image_url, "or image URL" %>
+      <%= f.text_field :remote_image_url, placeholder: "http://hogehoge..." %>
+      <!-- https://dl.dropboxusercontent.com/s/n4bbx3nt3uu35zq/asou_kumiko.jpg -->
     </p>
 
     <p>
-    <%= f.check_box :remove_image %> 画像削除
-    <%= f.hidden_field :image_cache %>
+      <%= f.check_box :remove_image %> 画像削除
+      <%= f.hidden_field :image_cache %>
     </p>
 
   </div>
