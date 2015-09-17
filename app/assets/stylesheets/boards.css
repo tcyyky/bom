@@ -4,9 +4,14 @@
 
 #map { 
 	height: 100%;
-	width: 100% 
+	width: 100%;
+	z-index: 1;
 }
 
-#createButton {
-	
+#build-button{
+	z-index: 2;
+}
+
+.section{
+	text-align: center;
 }

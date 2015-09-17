@@ -1,11 +1,5 @@
 $(function(){
 
-$(document).ready(function() {
-  $('#fullpage').fullpage({
-    anchors: ['m', 'd'],
-  });
-});
-
 
 var radius = 50; //円の半径
 

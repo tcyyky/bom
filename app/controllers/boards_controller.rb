@@ -31,6 +31,25 @@ class BoardsController < ApplicationController
   	render :json => res
   end
 
+  # GET /boards/sendFeedback/:gb/:ud
+  # Good と Badをインクリメント、デクリメントするAPI
+  # (g => good, b => bad), (u => up, d => down)
+  def sendFeedback
+    if params[:gb] == 0
+      if params[:ud] == 0
+        Board.find(params[:id]).increment(:good).save
+      elsif params[:ud] == 1
+        Board.fill(params[:id]).decrement(:good).save
+      end
+    elsif params[:gb] == 1
+      if params[:ud] == 0
+        Board.find(params[:id]).increment(:bad).save
+      elsif params[:ud] == 1
+        Board.fill(params[:id]).decrement(:bad).save
+      end
+    end
+  end
+
   # GET /boards/new
   def new
 
