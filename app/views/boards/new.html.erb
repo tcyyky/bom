@@ -1,16 +1,44 @@
-<h1>標識のエディット画面</h1>
+<h1>New Board</h1>
 
+<%= form_for(@board) do |f| %>
+  <% if @board.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@board.errors.count, "error") %> prohibited this board from being saved:</h2>
 
+      <ul>
+        <% @board.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= form_for :board, url: boards_path do |f| %>
-  <p>
-    <%= f.label :caption, "caption" %><br>
-    <%= f.text_area :caption, cols: 60, rows: 8 %>
-  </p>
-
-  <!-- image latitude longitude good bad username -->
-
-  <p>
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= image_tag(@board.image_url(:thumbnail), :width => 80, :height => 80) %>
+    <%= f.file_field :image %>
+    <%= f.check_box :remove_image %> 画像を削除する
+    <%= f.hidden_field :image_cache %>
+  </div>
+  <div class="actions">
     <%= f.submit %>
-  </p>
+  </div>
 <% end %>
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @board.username %>
+</p>
+
+<p>
+  <b>Boards:</b>
+   <%= image_tag(@board.image_url) %>
+</p>
+
+<%= link_to 'Back', boards_path %>
