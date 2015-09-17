@@ -1,0 +1,263 @@
+  <!doctype html>
+  <html>
+  <head>
+  
+  <meta charset="UTF-8"
+  <meta name="viewport" content="width=640">
+  
+  <title>無題ドキュメント</title>
+  
+  
+   <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css">
+   
+      <style type="text/css">
+  
+      body {
+      width:640x !important;
+      background:#ffffff;
+      min-height:1200px;
+  }
+  #wrap {
+      width:640px !important;
+      background:#fff;
+      min-height:1100px;
+  }
+  
+      
+      
+      /* テキストボックスのクラス*/
+      .comment {
+      overflow: scroll;
+    width: 450px;
+    height: 300px;
+      background-color: #fff;
+      border-color: #fff;
+      border-style: solid;
+      margin-bottom: 3px;
+      border-radius: 5px;
+      
+      font-family: 'Noto Sans Japanese', serif;
+      font-size:18px;
+      font-color:#ccc;
+      
+  }
+  
+  .info {
+      overflow: visible;  
+    width: 180px;
+    height: 100px;
+      background-color: #fff;
+      border-color: #fff;
+      border-style: solid;
+      margin-bottom: 3px;
+      border-radius: 5px;
+      
+      font-family: 'Noto Sans Japanese', serif;
+      font-size:18px;
+      font-color:#ccc;
+      
+  }
+  
+  .counter {
+      overflow: visible;  
+    width: 60px;
+    height: 40px;
+      background-color: #fff;
+      border-color: #fff;
+      border-style: solid;
+      margin-bottom: 10x;
+      border-radius: 5px;
+      
+      font-family: 'Noto Sans Japanese', serif;
+      font-size:28px;
+      font-color:#ccc;
+      
+  }
+  
+      /* ここからflip*/
+          /* simple */
+          .flip-container {
+              -webkit-perspective: 1000;
+              -moz-perspective: 1000;
+              -ms-perspective: 1000;
+              perspective: 1000;
+  
+              -ms-transform: perspective(1000px);
+              -moz-transform: perspective(1000px);
+                  -moz-transform-style: preserve-3d; 
+                  -ms-transform-style: preserve-3d; 
+  
+  
+          }
+  
+              
+  
+  
+              /* START: Accommodating for IE */
+              .flip-container:hover .back, .flip-container.hover .back {
+      -webkit-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      -o-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+  }
+  
+  .flip-container:hover .front, .flip-container.hover .front {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+  }
+          
+          /* END: Accommodating for IE */
+  
+          .flip-container, .front, .back {
+      width: 643px;
+      height: 840px;
+          }
+  
+          .flipper {
+              -webkit-transition: 0.6s;
+              -webkit-transform-style: preserve-3d;
+              -ms-transition: 0.6s;
+  
+              -moz-transition: 0.6s;
+              -moz-transform: perspective(1000px);
+              -moz-transform-style: preserve-3d;
+              -ms-transform-style: preserve-3d;
+  
+              transition: 0.6s;
+              transform-style: preserve-3d;
+  
+              position: relative;
+          }
+  
+          .front, .back {
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transition: 0.6s;
+      -webkit-transform-style: preserve-3d;
+      -webkit-transform: rotateY(0deg);
+      -moz-transition: 0.6s;
+      -moz-transform-style: preserve-3d;
+      -moz-transform: rotateY(0deg);
+      -o-transition: 0.6s;
+      -o-transform-style: preserve-3d;
+      -o-transform: rotateY(0deg);
+      -ms-transition: 0.6s;
+      -ms-transform-style: preserve-3d;
+      -ms-transform: rotateY(0deg);
+      transition: 0.6s;
+      transform-style: preserve-3d;
+      transform: rotateY(0deg);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+          }
+  
+          .front {
+              -webkit-transform: rotateY(0deg);
+              -ms-transform: rotateY(0deg);
+              background: #62C4E4;
+              z-index: 2;
+          }
+  
+          .back {
+              background: #62C4E4;
+              -webkit-transform: rotateY(-180deg);
+              -moz-transform: rotateY(-180deg);
+              -o-transform: rotateY(-180deg);
+              -ms-transform: rotateY(-180deg);
+              transform: rotateY(-180deg);
+          }
+  
+              /* START: Accommodating for IE */
+              .vertical.flip-container:hover .back, .vertical.flip-container.hover .back {
+                  -webkit-transform: rotateX(0deg);
+                  -moz-transform: rotateX(0deg);
+                  -o-transform: rotateX(0deg);
+                  -ms-transform: rotateX(0deg);
+                  transform: rotateX(0deg);
+              }
+  
+              .vertical.flip-container:hover .front, .vertical.flip-container.hover .front {
+                  -webkit-transform: rotateX(180deg);
+                  -moz-transform: rotateX(180deg);
+                  -o-transform: rotateX(180deg);
+                  transform: rotateX(180deg);
+              }
+          /* END: Accommodating for IE */
+      </style>
+   
+   
+  </head>
+  <body>
+  
+  <div class="flip-container" id="flip-toggle">
+            <div class="flipper">
+        
+                <div class="front" style="background:#62C4E4;">
+                
+               
+                
+                     <span style="position: absolute; top: 184px; left: 23px; width: ; width: 581px; height: 520px;"><img src="UI-ura-cloud.png"  alt="" width="560" height="228" /></span>
+            <span style="position: absolute; top: 25px; left: 21px; width: ; width: 99px; height: 103px;"><img src="UI-return.png"  alt="" width="99" height="99" /></span>
+                         <span style="position: absolute; top: 20px; left: 170px; width: ; width: 352px; height: 513px;"><img src="UI-kanban.png"  alt="" width="324" height="526" /></span>
+                            <span style="position: absolute; top: 521px; left: 156px; width: ; width: 434px; height: 210px;"><img src="UI-info-back.png"  alt="" width="343" height="168"  /></span>
+                          <span style="position: absolute; top: 540px; left: 190px; width: ; width: 164px; height: 158px;"><img src="UI-info-like.png"  alt="" width="125" height="125" /></span>
+                         <span style="position: absolute; top: 540px; left: 340px; width: ; width: 162px; height: 160px;"><img src="UI-info-unlike.png"  alt="" width="125" height="125" /></span>
+                          
+                                  <span style="position: absolute; top: 720px; left: 364px; width: ; width: 124px; height: 129px;"><img src="UI-facebook.png"  alt="" width="105" height="105" /></span>
+                                          <span style="position: absolute; top: 720px; left: 243px; width: ; width: 114px; height: 117px;"><img src="UI-twitter.png"  alt="" width="105" height="105" /></span>
+                                                  <span style="position: absolute; top: 720px; left: 485px; width: ; width: 107px; height: 108px;"><img src="UI-google.png"  alt="" width="105" height="105"  /></span>
+              
+                <span style="position: absolute; top: 588px; left: 521px; width: ; width: 123px; height: 130px;">
+                <div class="counter">
+  12
+  </div>
+  </span>
+    <span style="position: absolute; top: 590px; left: 64px; width: ; width: 200px; height: 130px;">
+                <div class="counter">
+  10
+  </div>
+  </span>
+                
+       
+              </div>
+                <div class="back" style="background:#62C4E4;">
+                    <div>	
+        
+          <em><span style="position: absolute; top: 184px; left: 23px; width: ; width: 581px; height: 520px;"><img src="UI-ura-cloud.png"  alt="" width="560" height="228" /></span>
+            <span style="position: absolute; top: 25px; left: 21px; width: ; width: 99px; height: 103px;"><img src="UI-return.png"  alt="" width="99" height="99" /></span>
+                         <span style="position: absolute; top: 20px; left: 170px; width: ; width: 352px; height: 513px;"><img src="UI-kanban.png"  alt="" width="324" height="526" /></span>
+                         
+                      <span style="position: absolute; top: 484px; left: 90px; width: ; width: 525px; height: 520px;">
+                <div class="comment">
+  文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+  文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+  文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+  </div>
+  </span>
+  
+   <span style="position: absolute; top: 12px; left: 394px; width: ; width: 200px; height: 130px;">
+                <div class="info">
+  投稿者:</br>
+  日付:
+  </div>
+  </span>
+                         
+                         
+                  </div>
+                </div>
+    </div>
+  </div>
+  <div onclick="document.querySelector('#flip-toggle').classList.toggle('hover');" ><img src="UI-info-urahe.png"></div>
+        <div onclick="document.querySelector('#flip-toggle').classList.toggle('hover');" ></div>
+    
+        <br /><br />
+    
+  </body>
+    </html>
+</em>
