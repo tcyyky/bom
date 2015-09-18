@@ -1,0 +1,90 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+body {
+    background-color: #87cefa;
+    font-family: 'Noto Sans Japanese', serif;
+}
+
+button {
+    background-color: #AADBEA;
+    border-color: #fff;
+    border-style: solid;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    outline: none;
+}
+
+div {
+    outline: none;
+}
+
+#phrase {
+    outline: none;
+    border:0;
+    padding:10px;
+    font-size:1.3em;
+    font-family: 'Noto Sans Japanese', serif;
+    color:#aaa;
+    border:solid 1px #ccc;
+    margin:5px 0 0;
+    width:300px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#latitude {
+    display: none;
+}
+
+#longitude {
+    display: none;
+}
+
+#canvas {
+    background-size:100% 100%;
+    width: 100%;
+    background-image: url(/assets/UI-make-background.png);
+    text-align: center;
+}
+
+#select {
+    width: 320px;
+    margin: 0 auto;
+}
+
+.center {
+    text-align: center;
+}
+
+#tabs-1 {
+    background-color: #87cefa;
+}
+
+#tabs-2 {
+    background-color: #87cefa;
+}
+
+#tabs-3 {
+    background-color: #87cefa;
+}
+
+a {
+    outline: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+li {
+    margin: 0;
+    float: left;
+    list-style: none;
+}
+
+
+
+

@@ -1,0 +1,46 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+body {
+    background-color: #87cefa;
+    font-family: 'Noto Sans Japanese', serif;
+}
+
+#background {
+    background-size:100% 100%;
+    width: 100%;
+    height: 350px;
+    background-image: url(../images/UI-make-background.png);
+    text-align: center;
+}
+
+#board {
+    padding-top: 130px;
+}
+
+.imgboard {
+    margin: 0 10px;
+}
+
+.back {
+    margin-left: 30px;
+}
+
+.center {
+    text-align: center;
+    margin: 0 10px;
+}
+
+
+a {
+    outline: none;
+}
+
+p {
+    font-size:1.5em;
+    font-family: 'Noto Sans Japanese', serif;
+    color: #333;
+    margin-top: 60px;
+}
+
+
+
