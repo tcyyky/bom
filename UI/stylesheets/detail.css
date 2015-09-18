@@ -1,0 +1,23 @@
+body {
+    background-color: #87cefa;
+}
+
+button {
+    background-color: #AADBEA;
+    border-color: #fff;
+    border-style: solid;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+#kanban {
+
+    background-size:100% 100%;
+    width: 100%;
+    background-image: url(../UI-make-background.png);
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}

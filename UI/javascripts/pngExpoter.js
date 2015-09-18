@@ -32,7 +32,7 @@ var displayImg = [];
 var canvas = document.getElementById('canvasElem');
 var ctx = canvas.getContext('2d');
 //var type = 'image/png';
-var board_num = 0;
+var board_num = 0;    
 
 function change_board(num) {
     board_num = num;
@@ -114,6 +114,7 @@ function display() {
 
     for (var i in displayImg){
         ctx.drawImage(displayImg[i], 0, 0, 400, 400);
+        console.log(displayImg[i]);
     }
 }
 

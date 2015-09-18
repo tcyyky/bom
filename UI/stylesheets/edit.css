@@ -21,3 +21,63 @@ button {
 .center {
     text-align: center;
 }
+
+#tabs-1 {
+    background-color: #87cefa;
+}
+
+#tabs-2 {
+    background-color: #87cefa;
+}
+
+#tabs-3 {
+    background-color: #87cefa;
+}
+
+
+* {  /* 好ましくないが取りあえずマージンとパディングをリセット */
+  margin: 0;
+  padding: 0;
+}
+#slider_wrap {
+  margin: 20px auto;
+  width: 680px;  /* 全体の幅 */
+  height: 125px;  /* パネルの高さ + パディング */
+  padding: 20px;
+  background: #87cefa;
+  position: relative;  /* 基点とするため相対配置に */
+  border: none;
+}
+#slider_prev {
+  position: absolute;  /* 絶対配置 */
+  top: 65px;
+  left: 10px;
+  cursor: pointer;
+}
+#slider_next {
+  position: absolute;  /* 絶対配置 */
+  top: 65px;
+  right: 10px;
+  cursor: pointer;
+}
+#slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;  /* はみ出た部分を非表示に */
+}
+#slider_inner ul.panel {
+  width: 640px;
+  height: 85px;
+  padding: 20px;  /* パネルの幅＋パディング = 680px */
+  list-style-type: none;
+  float: left;
+  background: #87cefa;  /* 領域がわかりやすいように色づけ */
+}
+#slider_inner ul.panel li {
+  float: left;
+  margin: 0 5px;
+  display: inline;  /* li をフロートさせるとIE6 ではずれるのでこの指定で回避 */
+}
+#slider_inner ul.panel img {
+  border: none;
+}

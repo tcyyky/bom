@@ -3,8 +3,20 @@
     <title>My App</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/edit.css">
+
+
+    <script type="text/javascript" src="./javascripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./javascripts/jquery-ui.js"></script>
+    <link href="./stylesheets/ui.tabs.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
+<script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
+
 <div id="canvas">
     <canvas id="canvasElem" width="400" height="400"></canvas>
 </div>
@@ -13,38 +25,10 @@
 <button onclick="change_board(2)">注意</button>
 <button onclick="change_board(3)">禁止</button>
 
-<!-- 
-<script type="text/javascript">
-$(function() {
-        $( '#ui-tab > ul' ).tabs({
-          collapsible: true
-        });
-      });
 
-</script>
+<div id="tabs">
 
-<div id="ui-tab">
-    <ul>
-        <li><a href="#fragment-1"><span>タブ1</span></a></li>
-        <li><a href="#fragment-2"><span>タブ2</span></a></li>
-        <li><a href="#fragment-3"><span>タブ3</span></a></li>
-    </ul>
-    
-    <div id="fragment-1">
-        <p>タブ1の内容</p>
-    </div>
-    
-    <div id="fragment-2">
-        <p>タブ2の内容</p>
-    </div>
-    
-    <div id="fragment-3">
-        <p>タブ3の内容</p>
-    </div>
-
-</div>
- -->
-<h3>Left</h3>
+  <div id="tabs-1">
     <button onclick="stamp('left', 'ame')"><img src="images/grayIcon/left/ame.png" height="80" width="80"></button>
     <button onclick="stamp('left', 'car')"><img src="images/grayIcon/left/car.png" height="80" width="80"></button>
     <button onclick="stamp('left', 'cat')"><img src="images/grayIcon/left/cat.png" height="80" width="80"></button> <br>
@@ -63,8 +47,8 @@ $(function() {
     <button onclick="stamp('left', 'woman')"><img src="images/grayIcon/left/woman.png" height="80" width="80"></button>
     <button onclick="stamp('left', 'youjo')"><img src="images/grayIcon/left/youjo.png" height="80" width="80"></button>
    <button onclick="stamp('left', 'hamburger')"><img src="images/grayIcon/left/hamburger.png" height="80" width="80"></button>
-   
-<h3>Center</h3>
+  </div>
+  <div id="tabs-2">
     <button onclick="stamp('center', 'banzai')"><img src="images/grayIcon/center/banzai.png" height="80" width="80"></button>
     <button onclick="stamp('center', 'barerina')"><img src="images/grayIcon/center/barerina.png" height="80" width="80"></button>
     <button onclick="stamp('center', 'chair')"><img src="images/grayIcon/center/chair.png" height="80" width="80"></button> <br>
@@ -76,7 +60,8 @@ $(function() {
     <button onclick="stamp('center', 'skul')"><img src="images/grayIcon/center/skul.png" height="80" width="80"></button><br>
     <button onclick="stamp('center', 'unko')"><img src="images/grayIcon/center/unko.png" height="80" width="80"></button>
     <button onclick="stamp('center', 'ushi')"><img src="images/grayIcon/center/ushi.png" height="80" width="80"></button>
-<h3>Right</h3>
+  </div>
+  <div id="tabs-3">
     <button onclick="stamp('right', 'nukarumi')"><img src="images/grayIcon/right/nukarumi.png" height="80" width="80"></button>
     <button onclick="stamp('right', 'car')"><img src="images/grayIcon/right/car.png" height="80" width="80"></button>
     <button onclick="stamp('right', 'cat')"><img src="images/grayIcon/right/cat.png" height="80" width="80"></button> <br>
@@ -95,14 +80,21 @@ $(function() {
     <button onclick="stamp('right', 'woman')"><img src="images/grayIcon/right/woman.png" height="80" width="80"></button>
     <button onclick="stamp('right', 'youjo')"><img src="images/grayIcon/right/youjo.png" height="80" width="80"></button>
     <button onclick="stamp('right', 'hamburger')"><img src="images/grayIcon/right/hamburger.png" height="80" width="80"></button>
+  </div>
+    <ul>
+    <li><a href="#tabs-1">Left</a></li>
+    <li><a href="#tabs-2">Center</a></li>
+    <li><a href="#tabs-3">Right</a></li>
+  </ul>
 </div>
 
-    <!-- ui tabs.js -->
-    <script type="text/javascript" src="./javascripts/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="./javascripts/jquery-ui.js"></script>
-    <link href="./stylesheets/ui.tabs.css" rel="stylesheet" type="text/css" />
+    
+</div>
 
-<script src= "javascripts/canvas-toBlob.js" ></script>
-<script src= "javascripts/FileSaver.js" ></script>
-<script src= "javascripts/pngExpoter.js" ></script>
+
+    <script type="text/javascript" src= "javascripts/canvas-toBlob.js" ></script>
+    <script type="text/javascript" src= "javascripts/FileSaver.js" ></script>
+    <script type="text/javascript" src= "javascripts/pngExpoter.js" ></script>
+
+
 </body>
