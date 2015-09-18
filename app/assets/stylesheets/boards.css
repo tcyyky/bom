@@ -216,7 +216,7 @@
 }
 #commentinput{
 	width: 250px;
-	height: 20px;
-
+	height: 30px;
 	border: 1px;
+	border-radius: 5px;
 }
