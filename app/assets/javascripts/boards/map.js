@@ -167,9 +167,14 @@ function addNearbyBoards (lat, lng) {
         google.maps.event.addListener(boards[boards.length-1], 'click', function(){
           $.fn.fullpage.moveTo(2);
           $.getJSON("/boards/detail"+this.id, null, function(data){
-            $("#board-img").attr("src", data.image);
-            $("#board-text").html(data.caption);
+            $(".board-img").attr("src", data.image);
+            $(".board-caption").html(data.caption);
+            $("#good-count").html(data.good);
+            $("#bad-count").html(data.bad);
+            $("#created-at").html(data.created_at.substr(0, 10));
           });
+          $("#good-button").on();
+          $("#bad-button").on();
         });
 
       //ある程度広範囲まで表示はする(クリックは出来ない)
