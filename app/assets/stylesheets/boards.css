@@ -38,10 +38,14 @@
   
 }
 
-.info {
+.metainfo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
   overflow: visible;  
-  width: 180px;
-  height: 100px;
+  width: 100px;
+  height: 50px;
   background-color: #fff;
   border-color: #fff;
   border-style: solid;
@@ -90,12 +94,32 @@
 	margin-left: -180px;
 }
 
+#ura-hyoushiki{
+	position: absolute;
+	left: 50%;
+	height: 100%;
+	width: 360px;
+	margin-left: -180px;
+}
+
+
 #haikei{
 	position: absolute;
 	z-index: -2;
 }
 
+#ura-haikei{
+	position: absolute;
+	z-index: -2;
+}
+
 #return-button{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+#ura-return-button{
 	position: absolute;
 	top: 10px;
 	left: 10px;
@@ -110,7 +134,29 @@
 	z-index: -1;
 }
 
+#ura-hyoushiki-img{
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	margin-left: -75px;
+	width: 150px;
+	z-index: -1;
+}
+
 #caption{
+	position: absolute;
+	top: 277px;
+	left: 50%;
+	margin-left: -105px;
+	width: 210px;
+	height: 50px;
+	text-align: center;
+	z-index: 1;
+	font-family: 'Noto Sans Japanese', serif;
+    font-size:17px;
+}
+
+#ura-caption{
 	position: absolute;
 	top: 277px;
 	left: 50%;

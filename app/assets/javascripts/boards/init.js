@@ -18,5 +18,7 @@ $(".flipper").flip({
 $("#hyoushiki-img").click(function() {
 	$(".flipper").flip('toggle');
 })
-
+$("#ura-hyoushiki-img").click(function() {
+	$(".flipper").flip('toggle');
+})
 })
