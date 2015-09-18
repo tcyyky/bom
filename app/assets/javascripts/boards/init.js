@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('#fullpage').fullpage({
     anchors: ['m', 'd'],
     scrollingSpeed: 300,
-    sectionsColor : ['#f2f2f2', '#4BBFC3'],
+    sectionsColor : ['#f2f2f2', '#62C4E4'],
     verticalCentered: false,
   });
 
@@ -12,11 +12,13 @@ $(document).ready(function() {
 
 $(".flipper").flip({
   axis: 'y',
-  trigger: 'click'
+  trigger: 'manual'
 });
 
-$(".toggle").click(function() {
+$("#hyoushiki-img-1").click(function() {
 	$(".flipper").flip('toggle');
 })
-
+$("#ura-hyoushiki-img-1").click(function() {
+	$(".flipper").flip('toggle');
+})
 })
