@@ -1,0 +1,12 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+body {
+    background-color: #87cefa;
+    font-family: 'Noto Sans Japanese', serif;
+    background-image: url(../images/confirm.png);
+    background-size:100% 100%;
+}
+
+body, html {
+    height:100%;
+}
