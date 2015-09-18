@@ -19,3 +19,57 @@
 .section{
 	text-align: center;
 }
+
+     
+      /* テキストボックスのクラス*/
+      .comment {
+      overflow: scroll;
+    width: 450px;
+    height: 300px;
+      background-color: #fff;
+      border-color: #fff;
+      border-style: solid;
+      margin-bottom: 3px;
+      border-radius: 5px;
+      
+      font-family: 'Noto Sans Japanese', serif;
+      font-size:18px;
+      font-color:#ccc;
+      
+  }
+  
+  .info {
+      overflow: visible;  
+    width: 180px;
+    height: 100px;
+      background-color: #fff;
+      border-color: #fff;
+      border-style: solid;
+      margin-bottom: 3px;
+      border-radius: 5px;
+      
+      font-family: 'Noto Sans Japanese', serif;
+      font-size:18px;
+      font-color:#ccc;
+      
+  }
+  
+  .counter {
+      overflow: visible;  
+    width: 60px;
+    height: 40px;
+      background-color: #fff;
+      border-color: #fff;
+      border-style: solid;
+      margin-bottom: 10x;
+      border-radius: 5px;
+      
+      font-family: 'Noto Sans Japanese', serif;
+      font-size:28px;
+      font-color:#ccc;
+      
+  }
+  
+  .flipper-content{
+      width:635x !important;
+  }

@@ -15,4 +15,8 @@ $(".flipper").flip({
   trigger: 'click'
 });
 
+$(".toggle").click(function() {
+	$(".flipper").flip('toggle');
+})
+
 })
