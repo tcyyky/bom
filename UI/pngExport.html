@@ -3,24 +3,40 @@
     <title>My App</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/edit.css">
-
+    <meta name="viewport" content="width=device-width">
 
     <script type="text/javascript" src="./javascripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./javascripts/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="./javascripts/jquery-ui.js"></script>
-    <link href="./stylesheets/ui.tabs.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
 <body>
 
 <script>
-  $(function() {
-    $( "#tabs" ).tabs();
-  });
+    $(function() {
+        $( "#tabs" ).tabs();
+    });
+    $(document).ready(function(){
+        $('.signselector').slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 3
+        });
+    });
   </script>
+
+
 
 <div id="canvas">
     <canvas id="canvasElem" width="400" height="400"></canvas>
 </div>
+<div id = "select" >
 <div class="center">
+<form>
+    <input type="text" class="phrase" />
+</form>
 <button onclick="change_board(1)">‎規制</button>
 <button onclick="change_board(2)">注意</button>
 <button onclick="change_board(3)">禁止</button>
@@ -29,68 +45,74 @@
 <div id="tabs">
 
   <div id="tabs-1">
-    <button onclick="stamp('left', 'ame')"><img src="images/grayIcon/left/ame.png" height="80" width="80"></button>
-    <button onclick="stamp('left', 'car')"><img src="images/grayIcon/left/car.png" height="80" width="80"></button>
-    <button onclick="stamp('left', 'cat')"><img src="images/grayIcon/left/cat.png" height="80" width="80"></button> <br>
-    <button onclick="stamp('left', 'karaoke')"><img src="images/grayIcon/left/karaoke.png" height="80" width="80"></button>
-    <button onclick="stamp('left', 'kisskidf')"><img src="images/grayIcon/left/kisskidf.png" height="80" width="80"></button>
-    <button onclick="stamp('left', 'kisskidm')"><img src="images/grayIcon/left/kisskidm.png" height="80" width="80"></button><br>
-    <button onclick="stamp('left', 'man')"><img src="images/grayIcon/left/man.png" height="80" width="80"></button>
-    <button onclick="stamp('left', 'motituki')"><img src="images/grayIcon/left/motituki.png" height="80" width="80"></button>
-    <button onclick="stamp('left', 'none')"><img src="images/grayIcon/left/none.png" height="80" width="80"></button><br>
-    <button onclick="stamp('left', 'nozoki')"><img src="images/grayIcon/left/nozoki.png" height="80" width="80"></button>
-    <button onclick="stamp('left', 'panda')"><img src="images/grayIcon/left/panda.png" height="80" width="80"></button>
-    <button onclick="stamp('left', 'run')"><img src="images/grayIcon/left/run.png" height="80" width="80"></button><br>
-    <button onclick="stamp('left', 'samurai')"><img src="images/grayIcon/left/samurai.png" height="80" width="80"></button>
-    <button onclick="stamp('left', 'syagamu')"><img src="images/grayIcon/left/syagamu.png" height="80" width="80"></button>
-    <button onclick="stamp('left', 'tomb')"><img src="images/grayIcon/left/tomb.png" height="80" width="80"></button><br>
-    <button onclick="stamp('left', 'woman')"><img src="images/grayIcon/left/woman.png" height="80" width="80"></button>
-    <button onclick="stamp('left', 'youjo')"><img src="images/grayIcon/left/youjo.png" height="80" width="80"></button>
-   <button onclick="stamp('left', 'hamburger')"><img src="images/grayIcon/left/hamburger.png" height="80" width="80"></button>
+    <div class="signselector">
+        <div><button onclick="stamp('left', 'none')"><img src="images/grayIcon/left/none.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'ame')"><img src="images/grayIcon/left/ame.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'car')"><img src="images/grayIcon/left/car.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'cat')"><img src="images/grayIcon/left/cat.png" height="80" width="80"></button> </div>
+        <div><button onclick="stamp('left', 'karaoke')"><img src="images/grayIcon/left/karaoke.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'kisskidf')"><img src="images/grayIcon/left/kisskidf.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'kisskidm')"><img src="images/grayIcon/left/kisskidm.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'man')"><img src="images/grayIcon/left/man.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'motituki')"><img src="images/grayIcon/left/motituki.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'nozoki')"><img src="images/grayIcon/left/nozoki.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'panda')"><img src="images/grayIcon/left/panda.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'run')"><img src="images/grayIcon/left/run.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'samurai')"><img src="images/grayIcon/left/samurai.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'syagamu')"><img src="images/grayIcon/left/syagamu.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'tomb')"><img src="images/grayIcon/left/tomb.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'woman')"><img src="images/grayIcon/left/woman.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'youjo')"><img src="images/grayIcon/left/youjo.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('left', 'hamburger')"><img src="images/grayIcon/left/hamburger.png" height="80" width="80"></button></div>
+    </div>
   </div>
   <div id="tabs-2">
-    <button onclick="stamp('center', 'banzai')"><img src="images/grayIcon/center/banzai.png" height="80" width="80"></button>
-    <button onclick="stamp('center', 'barerina')"><img src="images/grayIcon/center/barerina.png" height="80" width="80"></button>
-    <button onclick="stamp('center', 'chair')"><img src="images/grayIcon/center/chair.png" height="80" width="80"></button> <br>
-    <button onclick="stamp('center', 'heart')"><img src="images/grayIcon/center/heart.png" height="80" width="80"></button>
-    <button onclick="stamp('center', 'lead')"><img src="images/grayIcon/center/lead.png" height="80" width="80"></button>
-    <button onclick="stamp('center', 'nessi')"><img src="images/grayIcon/center/nessi.png" height="80" width="80"></button><br>
-    <button onclick="stamp('center', 'none')"><img src="images/grayIcon/center/none.png" height="80" width="80"></button>
-    <button onclick="stamp('center', 'ochai')"><img src="images/grayIcon/center/ochai.png" height="80" width="80"></button>
-    <button onclick="stamp('center', 'skul')"><img src="images/grayIcon/center/skul.png" height="80" width="80"></button><br>
-    <button onclick="stamp('center', 'unko')"><img src="images/grayIcon/center/unko.png" height="80" width="80"></button>
-    <button onclick="stamp('center', 'ushi')"><img src="images/grayIcon/center/ushi.png" height="80" width="80"></button>
+    <div class="signselector">
+        <div><button onclick="stamp('center', 'none')"><img src="images/grayIcon/center/none.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('center', 'banzai')"><img src="images/grayIcon/center/banzai.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('center', 'barerina')"><img src="images/grayIcon/center/barerina.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('center', 'chair')"><img src="images/grayIcon/center/chair.png" height="80" width="80"></button> </div>
+        <div><button onclick="stamp('center', 'heart')"><img src="images/grayIcon/center/heart.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('center', 'lead')"><img src="images/grayIcon/center/lead.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('center', 'nessi')"><img src="images/grayIcon/center/nessi.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('center', 'ochai')"><img src="images/grayIcon/center/ochai.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('center', 'skul')"><img src="images/grayIcon/center/skul.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('center', 'unko')"><img src="images/grayIcon/center/unko.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('center', 'ushi')"><img src="images/grayIcon/center/ushi.png" height="80" width="80"></button></div>
+    </div>
   </div>
   <div id="tabs-3">
-    <button onclick="stamp('right', 'nukarumi')"><img src="images/grayIcon/right/nukarumi.png" height="80" width="80"></button>
-    <button onclick="stamp('right', 'car')"><img src="images/grayIcon/right/car.png" height="80" width="80"></button>
-    <button onclick="stamp('right', 'cat')"><img src="images/grayIcon/right/cat.png" height="80" width="80"></button> <br>
-    <button onclick="stamp('right', 'karaoke')"><img src="images/grayIcon/right/karaoke.png" height="80" width="80"></button>
-    <button onclick="stamp('right', 'kisskidf')"><img src="images/grayIcon/right/kisskidf.png" height="80" width="80"></button>
-    <button onclick="stamp('right', 'kisskidm')"><img src="images/grayIcon/right/kisskidm.png" height="80" width="80"></button><br>
-    <button onclick="stamp('right', 'man')"><img src="images/grayIcon/right/man.png" height="80" width="80"></button>
-    <button onclick="stamp('right', 'motituki')"><img src="images/grayIcon/right/motituki.png" height="80" width="80"></button>
-    <button onclick="stamp('right', 'none')"><img src="images/grayIcon/right/none.png" height="80" width="80"></button><br>
-    <button onclick="stamp('right', 'nozoki')"><img src="images/grayIcon/right/nozoki.png" height="80" width="80"></button>
-    <button onclick="stamp('right', 'panda')"><img src="images/grayIcon/right/panda.png" height="80" width="80"></button>
-    <button onclick="stamp('right', 'run')"><img src="images/grayIcon/right/run.png" height="80" width="80"></button><br>
-    <button onclick="stamp('right', 'samurai')"><img src="images/grayIcon/right/samurai.png" height="80" width="80"></button>
-    <button onclick="stamp('right', 'syagamu')"><img src="images/grayIcon/right/syagamu.png" height="80" width="80"></button>
-    <button onclick="stamp('right', 'tomb')"><img src="images/grayIcon/right/tomb.png" height="80" width="80"></button><br>
-    <button onclick="stamp('right', 'woman')"><img src="images/grayIcon/right/woman.png" height="80" width="80"></button>
-    <button onclick="stamp('right', 'youjo')"><img src="images/grayIcon/right/youjo.png" height="80" width="80"></button>
-    <button onclick="stamp('right', 'hamburger')"><img src="images/grayIcon/right/hamburger.png" height="80" width="80"></button>
+    <div class="signselector">
+        <div><button onclick="stamp('right', 'none')"><img src="images/grayIcon/right/none.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'nukarumi')"><img src="images/grayIcon/right/nukarumi.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'car')"><img src="images/grayIcon/right/car.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'cat')"><img src="images/grayIcon/right/cat.png" height="80" width="80"></button> </div>
+        <div><button onclick="stamp('right', 'karaoke')"><img src="images/grayIcon/right/karaoke.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'kisskidf')"><img src="images/grayIcon/right/kisskidf.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'kisskidm')"><img src="images/grayIcon/right/kisskidm.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'man')"><img src="images/grayIcon/right/man.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'motituki')"><img src="images/grayIcon/right/motituki.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'nozoki')"><img src="images/grayIcon/right/nozoki.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'panda')"><img src="images/grayIcon/right/panda.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'run')"><img src="images/grayIcon/right/run.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'samurai')"><img src="images/grayIcon/right/samurai.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'syagamu')"><img src="images/grayIcon/right/syagamu.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'tomb')"><img src="images/grayIcon/right/tomb.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'woman')"><img src="images/grayIcon/right/woman.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'youjo')"><img src="images/grayIcon/right/youjo.png" height="80" width="80"></button></div>
+        <div><button onclick="stamp('right', 'hamburger')"><img src="images/grayIcon/right/hamburger.png" height="80" width="80"></button></div>
+    </div>
   </div>
     <ul>
-    <li><a href="#tabs-1">Left</a></li>
-    <li><a href="#tabs-2">Center</a></li>
-    <li><a href="#tabs-3">Right</a></li>
+    <li><a href="#tabs-1"><img src="images/signal_left_h.png" width="60"></a></li>
+    <li><a href="#tabs-2"><img src="images/signal_center_h.png" width="45"></a></li>
+    <li><a href="#tabs-3"><img src="images/signal_right_h.png" width="60"></a></li>
   </ul>
 </div>
-
+<a href="#tabs-1"><img src="images/UI parts/UI-make-build.png" width="60"></a>
     
 </div>
-
+</div>
 
     <script type="text/javascript" src= "javascripts/canvas-toBlob.js" ></script>
     <script type="text/javascript" src= "javascripts/FileSaver.js" ></script>

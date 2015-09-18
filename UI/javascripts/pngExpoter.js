@@ -1,4 +1,3 @@
-
 var left = {ame: 'ame.png', car: 'car.png', cat: 'cat.png'
             , hamburger: 'hamburger.png', karaoke: 'karaoke.png'
             , kisskidf: 'kisskidf.png', kisskidm: 'kisskidm.png'
