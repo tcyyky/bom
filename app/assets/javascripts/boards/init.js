@@ -21,4 +21,21 @@ $("#hyoushiki-img-1").click(function() {
 $("#ura-hyoushiki-img-1").click(function() {
 	$(".flipper").flip('toggle');
 })
+
+$("#good-button").click(function() {
+  alert("a");
+  $.get("/boards/sendFeedback/"+this.id+"/0/0", null, null);
+  var good = $("#good-count").text();
+  $("#good-count").text(Number(good)+1);
+  $("#good-button").off();
+});
+
+$("#bad-button").click(function() {
+  $.get("/boards/sendFeedback/"+this.id+"/1/0", null, null);
+  var bad = $("#bad-count").text();
+  $("#bad-count").text(Number(bad)+1);
+  $("#bad-button").off();
+
+});
+
 })
