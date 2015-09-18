@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   get 'boards/getNearby/:lat/:lng' => 'boards#getNearby', :format => false, :lat => /.*/, :lng => /.*/
+  get 'boards/detail/:id' => 'boards#detail'
   get 'boards/sendFeedback/:gb/:ud' => 'boards#sendFeedback'
 
   # The priority is based upon order of creation: first created -> highest priority.

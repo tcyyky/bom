@@ -127,7 +127,7 @@ function locationChanged(pos){
     map.panTo(latlng);
     myPos.setPosition(latlng);
     circle.setCenter(latlng);
-    circle2.setCenter(latlng);
+    // circle2.setCenter(latlng);
 
   //標識を追加
   addNearbyBoards(lat, lng);
@@ -166,7 +166,7 @@ function addNearbyBoards (lat, lng) {
         // クリックのイベントを追加
         google.maps.event.addListener(boards[boards.length-1], 'click', function(){
           $.fn.fullpage.moveTo(2);
-          $.getJSON("/boards/"+this.id, null, function(data){
+          $.getJSON("/boards/detail"+this.id, null, function(data){
             $("#board-img").attr("src", data.image);
             $("#board-text").html(data.caption);
           });
