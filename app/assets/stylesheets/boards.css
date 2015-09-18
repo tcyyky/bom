@@ -106,7 +106,7 @@
 	left: 10px;
 }
 
-#hyoushiki-img{
+#hyoushiki-img-1{
 	position: absolute;
 	top: 10px;
 	left: 50%;
@@ -115,13 +115,31 @@
 	z-index: -1;
 }
 
-#ura-hyoushiki-img{
+#hyoushiki-img-2 {
+	position: absolute;
+	top: 234px;
+	left: 50%;
+	margin-left: -125px;
+	width: 250px;
+	z-index: -2;
+}
+
+#ura-hyoushiki-img-1{
 	position: absolute;
 	top: 10px;
 	left: 50%;
 	margin-left: -75px;
 	width: 150px;
 	z-index: -1;
+}
+
+#ura-hyoushiki-img-2{
+	position: absolute;
+	top: 142px;
+	left: 50%;
+	margin-left: -75px;
+	width: 150px;
+	z-index: -2;
 }
 
 #caption{
@@ -192,19 +210,20 @@
 	margin-bottom: 3px;
 	border-radius: 5px;
 	font-family: "Noto Sans Japanese",serif;
-	font-size: 18px;
+
 	position: absolute;
 	top: 253px;
 	left: 50%;
 	margin-left: -160px;
 }
 
-.comment-head{
-	font-size: 18px;
-}
-
 .comment-body{
-	font-size: 14px;
+	font-size: 10px;
+	text-align: left;
+}
+.comment-foot{
+	font-size: 10px;
+	text-align: right;
 }
 
 .addcomment{
