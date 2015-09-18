@@ -5,9 +5,14 @@ $(document).ready(function() {
     anchors: ['m', 'd'],
     scrollingSpeed: 300,
     sectionsColor : ['#f2f2f2', '#4BBFC3'],
+    verticalCentered: false,
   });
 
 });
 
+$(".flipper").flip({
+  axis: 'y',
+  trigger: 'click'
+});
 
 })
