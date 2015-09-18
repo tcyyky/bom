@@ -35,56 +35,222 @@ div {
 	text-align: center;
 }
 
-     
-      /* テキストボックスのクラス*/
-      .comment {
-      overflow: scroll;
-    width: 450px;
-    height: 300px;
-      background-color: #fff;
-      border-color: #fff;
-      border-style: solid;
-      margin-bottom: 3px;
-      border-radius: 5px;
-      
-      font-family: 'Noto Sans Japanese', serif;
-      font-size:18px;
-      font-color:#ccc;
-      
-  }
+.metainfo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  overflow: visible;  
+  width: 100px;
+  height: 50px;
+  background-color: #fff;
+  border-color: #fff;
+  border-style: solid;
+  margin-bottom: 3px;
+  border-radius: 5px;
   
-  .info {
-      overflow: visible;  
-    width: 180px;
-    height: 100px;
-      background-color: #fff;
-      border-color: #fff;
-      border-style: solid;
-      margin-bottom: 3px;
-      border-radius: 5px;
-      
-      font-family: 'Noto Sans Japanese', serif;
-      font-size:18px;
-      font-color:#ccc;
-      
-  }
+  font-family: 'Noto Sans Japanese', serif;
+  font-color:#ccc;
   
-  .counter {
-      overflow: visible;  
-    width: 60px;
-    height: 40px;
-      background-color: #fff;
-      border-color: #fff;
-      border-style: solid;
-      margin-bottom: 10x;
-      border-radius: 5px;
-      
-      font-family: 'Noto Sans Japanese', serif;
-      font-size:28px;
-      font-color:#ccc;
-      
-  }
+}
+
+.counter {
+  overflow: visible;  
+  width: 35px;
+  height: 27px;
+  background-color: #fff;
+  border-color: #fff;
+  border-style: solid;
+  margin-bottom: 10px;
+  border-radius: 5px;
   
-  .flipper-content{
-      width:635x !important;
-  }
+  font-family: 'Noto Sans Japanese', serif;
+  font-size:20px;
+  font-color:#ccc;
+  
+}
+
+#like-count{
+	position: absolute;
+	top : 12px;
+	left: 22px;
+}
+
+#bad-count{
+	position: absolute;
+	top: 12px;
+	right: 22px;
+}
+
+#hyoushiki{
+	position: absolute;
+	left: 50%;
+	height: 100%;
+	width: 360px;
+	margin-left: -180px;
+}
+
+#ura-hyoushiki{
+	position: absolute;
+	left: 50%;
+	height: 100%;
+	width: 360px;
+	margin-left: -180px;
+}
+
+
+#haikei{
+	position: absolute;
+	z-index: -2;
+}
+
+#ura-haikei{
+	position: absolute;
+	z-index: -2;
+}
+
+#return-button{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+#ura-return-button{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+#hyoushiki-img-1{
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	margin-left: -125px;
+	width: 250px;
+	z-index: -1;
+}
+
+#hyoushiki-img-2 {
+	position: absolute;
+	top: 234px;
+	left: 50%;
+	margin-left: -125px;
+	width: 250px;
+	z-index: -2;
+}
+
+#ura-hyoushiki-img-1{
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	margin-left: -75px;
+	width: 150px;
+	z-index: -1;
+}
+
+#ura-hyoushiki-img-2{
+	position: absolute;
+	top: 142px;
+	left: 50%;
+	margin-left: -75px;
+	width: 150px;
+	z-index: -2;
+}
+
+#caption{
+	position: absolute;
+	top: 277px;
+	left: 50%;
+	margin-left: -105px;
+	width: 210px;
+	height: 50px;
+	text-align: center;
+	z-index: 1;
+	font-family: 'Noto Sans Japanese', serif;
+    font-size:17px;
+}
+
+#ura-caption {
+	position: absolute;
+	top: 166px;
+	left: 50%;
+	margin-left: -105px;
+	width: 210px;
+	height: 50px;
+	text-align: center;
+	z-index: 1;
+	font-family: "Noto Sans Japanese",serif;
+	font-size: 11px;
+}
+
+#hyouka{
+	position: absolute;
+	top: 410px;
+	left: 50%;
+	margin-left: -75px;
+}
+
+#hyouka-button-set{
+	position: absolute;
+	top: 417px;
+	left: 50%;
+	margin-left: -150px;
+	width: 300px;
+	height: 74px;
+	text-align: center;
+
+}
+
+#like-button{
+	margin-right: 5px;
+}
+
+#bad-button{
+	margin-left: 5px;
+}
+
+#sosial-button-set{
+	position: absolute;
+	top: 495px;
+	right: 30px;
+}
+
+.comment {
+	overflow: scroll;
+	width: 320px;
+	height: 230px;
+	background-color: #FFF;
+	border-color: #FFF;
+	border-style: solid;
+	margin-bottom: 3px;
+	border-radius: 5px;
+	font-family: "Noto Sans Japanese",serif;
+
+	position: absolute;
+	top: 253px;
+	left: 50%;
+	margin-left: -160px;
+}
+
+.comment-body{
+	font-size: 14px;
+	text-align: left;
+}
+.comment-foot{
+	font-size: 10px;
+	text-align: right;
+}
+
+.addcomment{
+	position: absolute;
+	left: 50%;
+	width: 300px;
+	margin-left: -150px;
+	top: 496px;
+}
+#commentinput{
+	width: 250px;
+	height: 30px;
+	border: 1px;
+	border-radius: 5px;
+}
