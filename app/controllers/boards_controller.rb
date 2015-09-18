@@ -35,10 +35,16 @@ class BoardsController < ApplicationController
   # 	render :json => res
   # end
 
-  # GET /users/:id
-  # GET /users/:id.json
+  # GET /boards/:id
+  # GET /boards/:id.json
   def show
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: @board }
+    # end
 
+    # gem jbuilder を使う
+    # http://railscasts.com/episodes/320-jbuilder?language=ja&view=asciicast
   end
 
 
@@ -89,14 +95,26 @@ class BoardsController < ApplicationController
   #   end
   # end
 
+  # POST /boards
+  # POST /boards.json
   def create
     tmp_board_params = board_params
     image_data = base64_conversion(tmp_board_params[:remote_image_url])
     tmp_board_params[:image] = image_data
     tmp_board_params[:remote_image_url] = nil
+
     @board = Board.new(tmp_board_params)
-    @board.save
-    redirect_to edit_board_path(@board)
+
+    respond_to do |format|
+      if @board.save
+        format.html { redirect_to @board, notice: 'Board created' }
+        format.json { render :show, status: :created, location: @board }
+      else
+        format.html { render :new }
+        format.json { render json: @board.errors, status: :unprocessable_entity }
+      end
+    # redirect_to edit_board_path(@board)
+    end
   end
 
   # PATCH/PUT /boards/:id
