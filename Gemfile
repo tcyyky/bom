@@ -9,6 +9,7 @@ end
 gem 'simple_form'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'carrierwave-base64'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
