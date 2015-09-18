@@ -1,5 +1,6 @@
 # coding: utf-8
 class BoardsController < ApplicationController
+  include CarrierwaveBase64Uploader
   before_action :set_board, only: [:show, :edit, :update, :destroy]
 
 	# GET /
@@ -73,19 +74,29 @@ class BoardsController < ApplicationController
 
   # POST /boards
   # POST /boards.json
-  def create
-    #@board = Board.new(params[:id])
-    @board = Board.new(board_params)
+  # def create
+  #   #@board = Board.new(params[:id])
+  #   @board = Board.new(board_params)
 
-    respond_to do |format|
-      if @board.save
-        format.html { redirect_to @board, notice: 'Board created' }
-        format.json { render :show, status: :created, location: @board }
-      else
-        format.html { render :new }
-        format.json { render json: @board.errors, status: :unprocessable_entity }
-      end
-    end
+  #   respond_to do |format|
+  #     if @board.save
+  #       format.html { redirect_to @board, notice: 'Board created' }
+  #       format.json { render :show, status: :created, location: @board }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @board.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+  def create
+    tmp_board_params = board_params
+    image_data = base64_conversion(tmp_board_params[:remote_image_url])
+    tmp_board_params[:image] = image_data
+    tmp_board_params[:remote_image_url] = nil
+    @board = Board.new(tmp_board_params)
+    @board.save
+    redirect_to edit_board_path(@board)
   end
 
   # PATCH/PUT /boards/:id

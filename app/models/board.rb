@@ -4,7 +4,9 @@ class Board < ActiveRecord::Base
   has_many :comments
   # attr_accessible :image # モデルではなく，コントローラでパラメータをフィルタリングする
 
-  mount_uploader :image, ImageUploader
+  # mount_uploader :image, ImageUploader
+  mount_base64_uploader :image, ImageUploader
+
 
   enum back_type: %i(/assets/minisign_b.png /assets/minisign_y.png /assets/minisign_r.png)
 end
