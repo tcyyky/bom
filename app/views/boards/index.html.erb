@@ -1,19 +1,12 @@
 <%= javascript_include_tag "https://maps-api-ssl.google.com/maps/api/js?v=3&sensor=false", "boards/map.js", "boards/jquery.fullPage.min.js", "boards/jquery.flip.min.js", "boards/init.js" %>
 
 <div id="fullpage">
-
- 	<div class="section">
-    <div id="map"></div>
-
-    	<%= link_to image_tag("UI-build.png", {:border => "0", :alt => "BUILD", :id => "build-button"}), new_board_path %>
-
-  	</div>
+	<div class="section">
+		<div id="map"></div>
+		<a href="boards/new"><img src="/assets/UI-build.png" alt="BUILD" id="build-button"></a>
+	</div>
 	<div class="section">
 
- 
-  <div class="section">
-    <div class="flipper">
-	    <div class="front">
 
 
 		<div class="flipper">
@@ -21,7 +14,6 @@
 			<div class="front">
 
 				<div id="hyoushiki">
-
 
 					<span id="return-button"><a href="#m"><img src="/assets/UI-return.png" width="60"/></a></span>
 
@@ -117,5 +109,4 @@
 			</div><!--back-->
 		</div><!--flipper-->
 
-	</div><!--section-->
-</div>
+	</div>
