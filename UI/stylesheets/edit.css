@@ -18,7 +18,7 @@ div {
     outline: none;
 }
 
-.phrase {
+#phrase {
     outline: none;
     border:0;
     padding:10px;
@@ -33,8 +33,15 @@ div {
     border-radius: 3px;
 }
 
-#canvas {
+#latitude {
+    display: none;
+}
 
+#longitude {
+    display: none;
+}
+
+#canvas {
     background-size:100% 100%;
     width: 100%;
     background-image: url(../UI-make-background.png);

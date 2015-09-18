@@ -13,14 +13,16 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
 <body>
+
+<span id="latitude" >x</span>
+<span id="longitude" >y</span>
+
 <div id="canvas">
     <canvas id="canvasElement" width="400" height="400"></canvas>
 </div>
 <div id = "select" >
 <div class="center">
-<form>
-    <input type="text" class="phrase" maxlength='12'/>
-</form>
+<input type="text" id="phrase" maxlength='12'/>
 <button onclick="change_board(1)">‎規制</button>
 <button onclick="change_board(2)">注意</button>
 <button onclick="change_board(3)">禁止</button>
@@ -93,10 +95,10 @@
     <li><a href="#tabs-3"><img src="images/signal_right_def.png" width="60" id="red"></a></li>
   </ul>
 </div>
-<a href="" ><img src="images/UI parts/UI-make-build.png" width="80"></a>
+<a onclick="build()"><img src="images/UI parts/UI-make-build.png" width="80"></a>
 </div>
 
-<button onclick="chgImg()">画像書き出し</button>
+
 <img id="newImg">
 
 </div>

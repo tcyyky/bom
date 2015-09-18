@@ -31,7 +31,7 @@ var displayImg = [];
 var canvas = document.getElementById('canvasElement');
 var ctx = canvas.getContext('2d');
 //var type = 'image/png';
-var board_num = 0;    
+var board_num = 0;
 
 function change_board(num) {
     board_num = num;
@@ -43,6 +43,7 @@ function change_board(num) {
             displayImg[0] = img;
         });
         img.src = board[0];
+        //img.crossOrigin = "Anonymous";
     } else if (board_num == 2) {
         var img = new Image();
         img.onload = (function() {
@@ -50,6 +51,7 @@ function change_board(num) {
             displayImg[0] = img;
         });
         img.src = board[1];
+        //img.crossOrigin = "Anonymous";
     } else if (board_num == 3) {
         var img = new Image();
         img.onload = (function() {
@@ -57,6 +59,7 @@ function change_board(num) {
             displayImg[0] = img;
         });
         img.src = board[2];
+        //img.crossOrigin = "Anonymous";
     }
     display();
 }
@@ -67,10 +70,13 @@ function stamp(type, name) {
         var img = new Image();
         if (board_num == 1) {
             img.src = "./images/left/1_" + left[name];
+            //img.crossOrigin = "Anonymous";
         } else if (board_num == 2) {
             img.src = "./images/left/2_" + left[name];
+            //img.crossOrigin = "Anonymous";
         } else if (board_num == 3) {
             img.src = "./images/left/3_" + left[name];
+            //img.crossOrigin = "Anonymous";
         }
         img.onload = (function() {
             // ctx.drawImage(img, 0, 0, 400, 400);
@@ -81,10 +87,13 @@ function stamp(type, name) {
         var img = new Image();
         if (board_num == 1) {
             img.src = "./images/center/1_" + center[name];
+            //img.crossOrigin = "Anonymous";
         } else if (board_num == 2) {
             img.src = "./images/center/2_" + center[name];
+            //img.crossOrigin = "Anonymous";
         } else if (board_num == 3) {
             img.src = "./images/center/3_" + center[name];
+            //img.crossOrigin = "Anonymous";
         }
         img.onload = (function() {
             // ctx.drawImage(img, 0, 0, 400, 400);
@@ -95,10 +104,16 @@ function stamp(type, name) {
         var img = new Image();
         if (board_num == 1) {
             img.src = "./images/right/1_" + right[name];
+            //img.crossOrigin = "Anonymous";
+            //img.crossOrigin = "Anonymous";
         } else if (board_num == 2) {
             img.src = "./images/right/2_" + right[name];
+            //img.crossOrigin = "Anonymous";
+            //img.crossOrigin = "Anonymous";
         } else if (board_num == 3) {
             img.src = "./images/right/3_" + right[name];
+            //img.crossOrigin = "Anonymous";
+            //img.crossOrigin = "Anonymous";
         }
         img.onload = (function() {
             // ctx.drawImage(img, 0, 0, 400, 400);
@@ -154,9 +169,42 @@ $(function(){
     });
 });
 
-function chgImg() {
-  var png = canvas.toDataURL();
-  document.getElementById("newImg").src = png;
+function build() {
+    var phrase, latitude, longitude;
+    var png = canvas.toDataURL();
+    document.getElementById("newImg").src = png;
+    phrase = document.getElementById("phrase").value;
+    latitude = document.getElementById("latitude").innerHTML;
+    longitude = document.getElementById("longitude").innerHTML;
+    sendData(png, phrase, latitude, longitude);
+}
+
+function sendData( value, value2, value3, value4 ){
+    var form = document.createElement( 'form' );
+    document.body.appendChild( form );
+    var input = document.createElement( 'input' );
+    input.setAttribute( 'type' , 'hidden' );
+    input.setAttribute( 'name' , 'png' );
+    input.setAttribute( 'value' , value );
+    var input2 = document.createElement( 'input' );
+    input2.setAttribute( 'type' , 'hidden' );
+    input2.setAttribute( 'name' , 'phrase' );
+    input2.setAttribute( 'value' , value2 );
+    var input3 = document.createElement( 'input' );
+    input3.setAttribute( 'type' , 'hidden' );
+    input3.setAttribute( 'name' , 'latitude' );
+    input3.setAttribute( 'value' , value3 );
+    var input4 = document.createElement( 'input' );
+    input4.setAttribute( 'type' , 'hidden' );
+    input4.setAttribute( 'name' , 'longitude' );
+    input4.setAttribute( 'value' , value4 );
+    form.appendChild( input );
+    form.appendChild( input2 );
+    form.appendChild( input3 );
+    form.appendChild( input4 );
+    form.setAttribute( 'action' , '/boards/create' );
+    form.setAttribute( 'method' , 'post' );
+    form.submit();
 }
 
 // canvas.toBlob(function(blob) {
