@@ -74,7 +74,7 @@ function stamp(type, name) {
         }
         img.onload = (function() {
             // ctx.drawImage(img, 0, 0, 400, 400);
-            displayImg[1] = img;
+            displayImg[2] = img;
         });
 
     } else if (type == 'center') {
@@ -88,7 +88,7 @@ function stamp(type, name) {
         }
         img.onload = (function() {
             // ctx.drawImage(img, 0, 0, 400, 400);
-            displayImg[2] = img;
+            displayImg[1] = img;
         });
 
     } else if (type == 'right') {
