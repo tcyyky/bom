@@ -1,0 +1,15 @@
+<%= form_for( [@board, @board.comments.build] ) do |f| %>
+  <p>
+    <%= f.label :username, "Twitter ID (username)" %><br />
+    <%= f.text_field :username %>
+  </p>
+
+  <p>
+    <%= f.label :body, "Comment" %><br />
+    <%= f.text_area :body, cols: 40, rows: 4 %>
+  </p>
+
+  <p>
+    <%= f.submit "Add Comment" %>
+  </p>
+<% end %>
