@@ -1,0 +1,14 @@
+<p>
+  <strong>Twitter ID (username)</strong>
+  <%= comment.username %>
+</p>
+
+<p>
+  <strong>Comment</strong>
+  <%= simple_format comment.body %>
+</p>
+
+<p>
+  <%= link_to 'Destroy a Comment', [comment.board, comment],
+              method: :delete, data: { confirm: 'Are you sure destroy a comment?' } %>
+</p>

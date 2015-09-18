@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   # get 'boards/index'
   # get 'boards/show'
 
-  resources :boards
+  resources :boards do
+    resource :comments
+  end
+
   get 'boards/getNearby/:lat/:lng' => 'boards#getNearby', :format => false, :lat => /.*/, :lng => /.*/
   get 'boards/sendFeedback/:gb/:ud' => 'boards#sendFeedback'
 

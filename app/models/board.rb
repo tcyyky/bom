@@ -1,6 +1,7 @@
 # coding: utf-8
 class Board < ActiveRecord::Base
   belongs_to :username
+  has_many :comments
   # attr_accessible :image # モデルではなく，コントローラでパラメータをフィルタリングする
 
   mount_uploader :image, ImageUploader
