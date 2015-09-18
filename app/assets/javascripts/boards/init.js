@@ -12,10 +12,10 @@ $(document).ready(function() {
 
 $(".flipper").flip({
   axis: 'y',
-  trigger: 'click'
+  trigger: 'manual'
 });
 
-$(".toggle").click(function() {
+$("#hyoushiki-img").click(function() {
 	$(".flipper").flip('toggle');
 })
 

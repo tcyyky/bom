@@ -21,66 +21,66 @@
 }
 
      
-      /* テキストボックスのクラス*/
-      .comment {
-      overflow: scroll;
-    width: 450px;
-    height: 300px;
-      background-color: #fff;
-      border-color: #fff;
-      border-style: solid;
-      margin-bottom: 3px;
-      border-radius: 5px;
-      
-      font-family: 'Noto Sans Japanese', serif;
-      font-size:18px;
-      font-color:#ccc;
-      
-  }
+  /* テキストボックスのクラス*/
+.comment {
+  overflow: scroll;
+  width: 450px;
+  height: 300px;
+  background-color: #fff;
+  border-color: #fff;
+  border-style: solid;
+  margin-bottom: 3px;
+  border-radius: 5px;
   
-  .info {
-      overflow: visible;  
-    width: 180px;
-    height: 100px;
-      background-color: #fff;
-      border-color: #fff;
-      border-style: solid;
-      margin-bottom: 3px;
-      border-radius: 5px;
-      
-      font-family: 'Noto Sans Japanese', serif;
-      font-size:18px;
-      font-color:#ccc;
-      
-  }
+  font-family: 'Noto Sans Japanese', serif;
+  font-size:18px;
+  font-color:#ccc;
   
-  .counter {
-      overflow: visible;  
-    width: 35px;
-    height: 27px;
-      background-color: #fff;
-      border-color: #fff;
-      border-style: solid;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      
-      font-family: 'Noto Sans Japanese', serif;
-      font-size:20px;
-      font-color:#ccc;
-      
-  }
+}
 
-  #like-count{
-  	position: absolute;
-  	top : 12px;
-  	left: 22px;
-  }
+.info {
+  overflow: visible;  
+  width: 180px;
+  height: 100px;
+  background-color: #fff;
+  border-color: #fff;
+  border-style: solid;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  
+  font-family: 'Noto Sans Japanese', serif;
+  font-size:18px;
+  font-color:#ccc;
+  
+}
 
-  #bad-count{
-  	position: absolute;
-  	top: 12px;
-  	right: 22px;
-  }
+.counter {
+  overflow: visible;  
+  width: 35px;
+  height: 27px;
+  background-color: #fff;
+  border-color: #fff;
+  border-style: solid;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  
+  font-family: 'Noto Sans Japanese', serif;
+  font-size:20px;
+  font-color:#ccc;
+  
+}
+
+#like-count{
+	position: absolute;
+	top : 12px;
+	left: 22px;
+}
+
+#bad-count{
+	position: absolute;
+	top: 12px;
+	right: 22px;
+}
 
 #hyoushiki{
 	position: absolute;
@@ -151,6 +151,6 @@
 
 #sosial-button-set{
 	position: absolute;
-	top: 490px;
+	top: 495px;
 	right: 30px;
 }
