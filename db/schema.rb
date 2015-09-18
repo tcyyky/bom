@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20150917175804) do
     t.float    "longitude"
     t.integer  "good"
     t.integer  "bad"
-    t.integer  "username_id"
+    t.integer  "user_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "back_type"
@@ -29,21 +29,21 @@ ActiveRecord::Schema.define(version: 20150917175804) do
     t.string   "remote_image_url"
   end
 
-  add_index "boards", ["username_id"], name: "index_boards_on_username_id"
+  add_index "boards", ["user_id"], name: "index_boards_on_user_id"
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "username_id"
+    t.integer  "user_id"
     t.text     "body"
     t.integer  "board_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "comments", ["board_id"], name: "index_comments_on_board_id"
-  add_index "comments", ["username_id"], name: "index_comments_on_username_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "username"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

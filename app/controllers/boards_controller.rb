@@ -25,20 +25,20 @@ class BoardsController < ApplicationController
     render :json => res
   end
 
-  # # GET /boards/:id
-  # # 標識詳細のAPI
-  # def show
-  # 	c = Board.arel_table
-  #   res = Board.find(params[:id]).to_json
-
-  # 	render :json => res
-  # end
-
-  # GET /users/:id
-  # GET /users/:id.json
+  # GET /boards/:id
+  # 標識詳細のAPI
   def show
+  	c = Board.arel_table
+    res = Board.find(params[:id]).to_json
 
+  	render :json => res
   end
+
+  # # GET /users/:id
+  # # GET /users/:id.json
+  # def show
+
+  # end
 
 
   # GET /boards/sendFeedback/:gb/:ud
