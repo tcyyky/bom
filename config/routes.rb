@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'users/index'
-
-  get 'users/show'
+  # get 'users/index'
+  # get 'users/show'
+  # get 'boards/index'
+  # get 'boards/show'
 
   resources :boards
   get 'boards/getNearby/:lat/:lng' => 'boards#getNearby', :format => false, :lat => /.*/, :lng => /.*/
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  root 'boards#index'
+  root :to => 'boards#index'
 
 
   # Example of regular route:

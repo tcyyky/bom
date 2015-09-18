@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917031332) do
+ActiveRecord::Schema.define(version: 20150917175804) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "image"
@@ -21,9 +21,12 @@ ActiveRecord::Schema.define(version: 20150917031332) do
     t.integer  "good"
     t.integer  "bad"
     t.integer  "username_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "back_type"
+    t.boolean  "remove_image"
+    t.string   "image_cache"
+    t.string   "remote_image_url"
   end
 
   add_index "boards", ["username_id"], name: "index_boards_on_username_id"
