@@ -1,12 +1,29 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   get 'signes' => 'signes#index'
+=======
+  # get 'users/index'
+  # get 'users/show'
+  # get 'boards/index'
+  # get 'boards/show'
+
+  resources :boards do
+    resource :comments
+  end
+
+  get 'boards/getNearby/:lat/:lng' => 'boards#getNearby', :format => false, :lat => /.*/, :lng => /.*/
+  get 'boards/sendFeedback/:gb/:ud' => 'boards#sendFeedback'
+>>>>>>> f21005ff3a552e7b094ecbb8083bcb7d88a803d6
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+
+  root :to => 'boards#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

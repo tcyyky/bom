@@ -1,0 +1,90 @@
+/*// Place all the styles related to the boards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+#map {
+	height: 100%;
+	width: 100%
+}
+
+#createButton {
+
+}
+
+#notice {
+  color: green;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+	width: 100%;
+	z-index: 1;
+}
+
+#build-button{
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	width: 100px;
+	z-index: 2;
+}
+
+.section{
+	text-align: center;
+}
+
+     
+      /* テキストボックスのクラス*/
+      .comment {
+      overflow: scroll;
+    width: 450px;
+    height: 300px;
+      background-color: #fff;
+      border-color: #fff;
+      border-style: solid;
+      margin-bottom: 3px;
+      border-radius: 5px;
+      
+      font-family: 'Noto Sans Japanese', serif;
+      font-size:18px;
+      font-color:#ccc;
+      
+  }
+  
+  .info {
+      overflow: visible;  
+    width: 180px;
+    height: 100px;
+      background-color: #fff;
+      border-color: #fff;
+      border-style: solid;
+      margin-bottom: 3px;
+      border-radius: 5px;
+      
+      font-family: 'Noto Sans Japanese', serif;
+      font-size:18px;
+      font-color:#ccc;
+      
+  }
+  
+  .counter {
+      overflow: visible;  
+    width: 60px;
+    height: 40px;
+      background-color: #fff;
+      border-color: #fff;
+      border-style: solid;
+      margin-bottom: 10x;
+      border-radius: 5px;
+      
+      font-family: 'Noto Sans Japanese', serif;
+      font-size:28px;
+      font-color:#ccc;
+      
+  }
+  
+  .flipper-content{
+      width:635x !important;
+  }

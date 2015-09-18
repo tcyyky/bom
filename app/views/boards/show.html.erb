@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User Name:</b>
+  <%= @board.user %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag(@board.image_url) %>
+</p>
+
+<h2>Comments</h2>
+<%= render @board.comments %>
+
+<h2>Add Comment</h2>
+<%= render "comments/form" %>
+
+
+<%= link_to 'Edit', edit_board_path(@board) %> |
+<%= link_to 'Back', boards_path %>

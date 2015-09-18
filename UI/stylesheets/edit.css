@@ -19,6 +19,7 @@ div {
 }
 
 .phrase {
+    outline: none;
     border:0;
     padding:10px;
     font-size:1.3em;
@@ -27,6 +28,9 @@ div {
     border:solid 1px #ccc;
     margin:5px 0 0;
     width:300px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
 #canvas {
@@ -58,10 +62,16 @@ div {
     background-color: #87cefa;
 }
 
+a {
+    outline: none;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
+
+
 li {
     margin: 0;
     float: left;

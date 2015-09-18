@@ -22,13 +22,13 @@ var right = {car: 'car.png', cat: 'cat.png'
             , panda: 'panda.png', run: 'run.png'
             , samurai: 'samurai.png', syagamu: 'syagamu.png'
             , tomb: 'tomb.png', woman: 'woman.png'
-            , youjo: 'youjo.png', numarumi: 'nukarumi.png'}
+            , youjo: 'youjo.png', nukarumi: 'nukarumi.png'}
 
 var board = ['./images/board/blue.png','./images/board/yellow.png'
              ,'./images/board/red.png'];
 
 var displayImg = [];
-var canvas = document.getElementById('canvasElem');
+var canvas = document.getElementById('canvasElement');
 var ctx = canvas.getContext('2d');
 //var type = 'image/png';
 var board_num = 0;    
@@ -37,6 +37,7 @@ function change_board(num) {
     board_num = num;
     if (board_num == 1) {
         var img = new Image();
+
         img.onload = (function() {
             //ctx.drawImage(img, 0, 0, 400, 400);
             displayImg[0] = img;
@@ -115,6 +116,47 @@ function display() {
         ctx.drawImage(displayImg[i], 0, 0, 400, 400);
         console.log(displayImg[i]);
     }
+}
+
+
+$(function() {
+    $( "#tabs" ).tabs();
+});
+$(document).ready(function(){
+    $('.signselector').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 3
+    });
+});
+
+$(function(){
+ $('#red').click(function(){
+    $('#blue').attr('src', $('#blue').attr('src').replace('_h', '_def'));
+    $('#yellow').attr('src', $('#yellow').attr('src').replace('_h', '_def'));
+    $(this).attr('src', $(this).attr('src').replace('_def', '_h'));
+   });
+});
+
+$(function(){
+ $('#blue').click(function(){
+    $('#red').attr('src', $('#red').attr('src').replace('_h', '_def'));
+    $('#yellow').attr('src', $('#yellow').attr('src').replace('_h', '_def'));
+    $(this).attr('src', $(this).attr('src').replace('_def', '_h'));
+    });
+});
+
+$(function(){
+ $('#yellow').click(function(){
+    $('#blue').attr('src', $('#blue').attr('src').replace('_h', '_def'));
+    $('#red').attr('src', $('#red').attr('src').replace('_h', '_def'));
+    $(this).attr('src', $(this).attr('src').replace('_def', '_h'));
+    });
+});
+
+function chgImg() {
+  var png = canvas.toDataURL();
+  document.getElementById("newImg").src = png;
 }
 
 // canvas.toBlob(function(blob) {
