@@ -44,7 +44,7 @@ div {
 #canvas {
     background-size:100% 100%;
     width: 100%;
-    background-image: url(../UI-make-background.png);
+    background-image: url(../images/UI-make-background.png);
     text-align: center;
 }
 
