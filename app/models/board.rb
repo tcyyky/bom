@@ -1,6 +1,6 @@
 # coding: utf-8
 class Board < ActiveRecord::Base
-  belongs_to :username
+  belongs_to :user
   has_many :comments
   # attr_accessible :image # モデルではなく，コントローラでパラメータをフィルタリングする
 
