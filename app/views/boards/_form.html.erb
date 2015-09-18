@@ -27,6 +27,11 @@
     </p>
 
     <p>
+      <%= f.label :caption %>
+      <%= f.text_field :caption , placeholder: "うんこ落ちてる" %>
+    </p>
+
+    <p>
       <%= f.check_box :remove_image %> 画像削除
       <%= f.hidden_field :image_cache %>
     </p>

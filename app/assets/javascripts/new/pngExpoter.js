@@ -179,13 +179,30 @@ function build() {
     sendData(image, caption, latitude, longitude);
 }
 
+// base64 format にエンコードされた画像をサーバーへ送る
+$("#canvas_output").on("click", function () {
+  var _form = $("#new_board");
+  var image = canvas.toDataURL();
+  $("#board_image").val("");
+  $("#board_remote_image_url").val(image);
+
+  var caption, latitude, longitude;
+  caption = document.getElementById("caption").value;
+  latitude = document.getElementById("latitude").innerHTML;
+  longitude = document.getElementById("longitude").innerHTML;
+  $("#board_caption").val(caption); //初期化
+  $("#board_latitude").val(latitude);
+  $("#board_longitude").val(latitude);
+  _form.submit();
+});
+
 function sendData( value, value2, value3, value4 ){
     var form = document.createElement( 'form' );
     document.body.appendChild( form );
 
     var input = document.createElement( 'input' );
     input.setAttribute( 'type' , 'hidden' );
-    input.setAttribute( 'name' , 'image' );
+    input.setAttribute( 'name' , 'remote_image_url' );
     input.setAttribute( 'value' , value );
 
     var input2 = document.createElement( 'input' );
@@ -202,15 +219,17 @@ function sendData( value, value2, value3, value4 ){
     input4.setAttribute( 'type' , 'hidden' );
     input4.setAttribute( 'name' , 'longitude' );
     input4.setAttribute( 'value' , value4 );
-    
+
     form.appendChild( input );
     form.appendChild( input2 );
     form.appendChild( input3 );
     form.appendChild( input4 );
-    form.setAttribute( 'action' , '/boards/create' );
+    form.setAttribute( 'action' , '/boards#create' );
     form.setAttribute( 'method' , 'post' );
     form.submit();
 }
+
+
 
 // canvas.toBlob(function(blob) {
 //     saveAs(blob, "pretty image.png");
