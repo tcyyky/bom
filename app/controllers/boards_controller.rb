@@ -120,6 +120,6 @@ class BoardsController < ApplicationController
 
   # モデルではなくコントローラでパラメータのフィルタリングをする．
   def board_params
-    params.require(:board).permit(:caption, :latitude, :longitude, :back_type, :good, :bad, :image, :remove_image, :image_cache, :remote_image_url) # マイグレーションファイルの確認をせよ．:username userモデルへの参照型なので，ここで指定するとerrorとなる．
+    params.require(:board).permit(:caption, :latitude, :longitude, :back_type, :good, :bad, :image, :remove_image, :image_cache, :remote_image_url) # マイグレーションファイルの確認をせよ．:user は userモデルへの参照型なので，ここで指定するとerrorとなる？
   end
 end

@@ -8,7 +8,7 @@ class CreateBoards < ActiveRecord::Migration
       t.integer :type
       t.integer :good
       t.integer :bad
-      t.references :username, index: true, foreign_key: true
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end
