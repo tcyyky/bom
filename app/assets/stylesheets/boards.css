@@ -56,20 +56,101 @@
   
   .counter {
       overflow: visible;  
-    width: 60px;
-    height: 40px;
+    width: 35px;
+    height: 27px;
       background-color: #fff;
       border-color: #fff;
       border-style: solid;
-      margin-bottom: 10x;
+      margin-bottom: 10px;
       border-radius: 5px;
       
       font-family: 'Noto Sans Japanese', serif;
-      font-size:28px;
+      font-size:20px;
       font-color:#ccc;
       
   }
-  
-  .flipper-content{
-      width:635x !important;
+
+  #like-count{
+  	position: absolute;
+  	top : 12px;
+  	left: 22px;
   }
+
+  #bad-count{
+  	position: absolute;
+  	top: 12px;
+  	right: 22px;
+  }
+
+#hyoushiki{
+	position: absolute;
+	left: 50%;
+	height: 100%;
+	width: 360px;
+	margin-left: -180px;
+}
+
+#haikei{
+	position: absolute;
+	z-index: -2;
+}
+
+#return-button{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+#hyoushiki-img{
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	margin-left: -125px;
+	width: 250px;
+	z-index: -1;
+}
+
+#caption{
+	position: absolute;
+	top: 277px;
+	left: 50%;
+	margin-left: -105px;
+	width: 210px;
+	height: 50px;
+	text-align: center;
+	z-index: 1;
+	font-family: 'Noto Sans Japanese', serif;
+    font-size:17px;
+}
+
+#hyouka{
+	position: absolute;
+	top: 410px;
+	left: 50%;
+	margin-left: -75px;
+}
+
+#hyouka-button-set{
+	position: absolute;
+	top: 417px;
+	left: 50%;
+	margin-left: -150px;
+	width: 300px;
+	height: 74px;
+	text-align: center;
+
+}
+
+#like-button{
+	margin-right: 5px;
+}
+
+#bad-button{
+	margin-left: 5px;
+}
+
+#sosial-button-set{
+	position: absolute;
+	top: 490px;
+	right: 30px;
+}
