@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   # get 'boards/:id' => 'catalog#view'
 
+  get 'boards/new/:lat/:lng' => 'boards#new', :format => false, :lat => /.*/, :lng => /.*/
   get 'boards/getNearby/:lat/:lng' => 'boards#getNearby', :format => false, :lat => /.*/, :lng => /.*/
   get 'boards/detail/:id' => 'boards#detail'
   get 'boards/sendFeedback/:id/:gb/:ud' => 'boards#sendFeedback'
