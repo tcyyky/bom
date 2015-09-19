@@ -114,6 +114,8 @@ class BoardsController < ApplicationController
     image_data = base64_conversion(tmp_board_params[:remote_image_url])
     tmp_board_params[:image] = image_data
     tmp_board_params[:remote_image_url] = nil
+    tmp_board_params[:good] = 0
+    tmp_board_params[:bad] = 0
 
     @board = Board.new(tmp_board_params)
 

@@ -148,8 +148,6 @@ function addNearbyBoards (lat, lng) {
     $.each(data, function () {
       var latlng = new google.maps.LatLng(this.latitude, this.longitude);
       var dist = google.maps.geometry.spherical.computeDistanceBetween(myPos.getPosition(), latlng);
-          console.log(this.latitude);
-
       if(dist < radius){
         var opt = {
           position: latlng,
@@ -167,7 +165,7 @@ function addNearbyBoards (lat, lng) {
         google.maps.event.addListener(boards[boards.length-1], 'click', function(){
           $.fn.fullpage.moveTo(2);
           $.getJSON("/boards/detail/"+this.id, null, function(data){
-            $(".board-img").attr("src", data.image);
+            $(".board-img").attr("src", data.image.url);
             $(".board-caption").html(data.caption);
             $("#good-count").html(data.good);
             $("#bad-count").html(data.bad);
