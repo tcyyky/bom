@@ -174,7 +174,7 @@ function addNearbyBoards (lat, lng) {
             $("#created-at").html(data.created_at.substr(0, 10));
           });
           $("#good-button").on();
-          $("#bad-button").on();
+          $("#bad-button").off();
         });
 
       //ある程度広範囲まで表示はする(クリックは出来ない)
