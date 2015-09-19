@@ -13,15 +13,16 @@ class BoardsController < ApplicationController
   # 周辺標識のAPI
 	def getNearby
     c = Board.arel_table
-    res = Board.where(c[:latitude].gt(params[:lat].to_f - 0.05)
-                       .and(c[:latitude].lt(params[:lat].to_f + 0.05))
-                       .and(c[:longitude].gt(params[:lng].to_f - 0.05))
-                       .and(c[:longitude].lt(params[:lng].to_f + 0.05)))
-          .select(c[:id])
-          .select(c[:back_type])
-          .select(c[:latitude])
-          .select(c[:longitude])
-          .to_json
+    # res = Board.where(c[:latitude].gt(30)
+    #                    .and(c[:latitude].lt(50))
+    #                    .and(c[:longitude].gt(130))
+    #                    .and(c[:longitude].lt(150)))
+    #       .select(c[:id])
+    #       .select(c[:back_type])
+    #       .select(c[:latitude])
+    #       .select(c[:longitude])
+    #       .to_json
+    res = Board.all.to_json
 
     render :json => res
   end

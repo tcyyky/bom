@@ -195,10 +195,11 @@
 	margin-left: 5px;
 }
 
-#sosial-button-set{
+#social-button-set{
 	position: absolute;
 	top: 495px;
 	right: 30px;
+	width: 200px;
 }
 
 .comment {
