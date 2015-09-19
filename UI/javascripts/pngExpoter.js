@@ -176,7 +176,7 @@ function build() {
     phrase = document.getElementById("phrase").value;
     latitude = document.getElementById("latitude").innerHTML;
     longitude = document.getElementById("longitude").innerHTML;
-    sendData(png, phrase, latitude, longitude);
+    //sendData(png, phrase, latitude, longitude);
 }
 
 function sendData( value, value2, value3, value4 ){
