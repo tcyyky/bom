@@ -23,7 +23,6 @@ $("#ura-hyoushiki-img-1").click(function() {
 })
 
 $("#good-button").click(function() {
-  alert("a");
   $.get("/boards/sendFeedback/"+this.id+"/0/0", null, null);
   var good = $("#good-count").text();
   $("#good-count").text(Number(good)+1);
@@ -35,7 +34,6 @@ $("#bad-button").click(function() {
   var bad = $("#bad-count").text();
   $("#bad-count").text(Number(bad)+1);
   $("#bad-button").off();
-
 });
 
 })

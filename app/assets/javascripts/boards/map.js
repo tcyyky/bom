@@ -145,10 +145,10 @@ function addNearbyBoards (lat, lng) {
     boards = null;
     boards = [];
 
-
     $.each(data, function () {
       var latlng = new google.maps.LatLng(this.latitude, this.longitude);
       var dist = google.maps.geometry.spherical.computeDistanceBetween(myPos.getPosition(), latlng);
+          console.log(this.latitude);
 
       if(dist < radius){
         var opt = {
@@ -166,7 +166,7 @@ function addNearbyBoards (lat, lng) {
         // クリックのイベントを追加
         google.maps.event.addListener(boards[boards.length-1], 'click', function(){
           $.fn.fullpage.moveTo(2);
-          $.getJSON("/boards/detail"+this.id, null, function(data){
+          $.getJSON("/boards/detail/"+this.id, null, function(data){
             $(".board-img").attr("src", data.image);
             $(".board-caption").html(data.caption);
             $("#good-count").html(data.good);
@@ -174,7 +174,7 @@ function addNearbyBoards (lat, lng) {
             $("#created-at").html(data.created_at.substr(0, 10));
           });
           $("#good-button").on();
-          $("#bad-button").on();
+          $("#bad-button").off();
         });
 
       //ある程度広範囲まで表示はする(クリックは出来ない)
