@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
 
+  #get 'boards/:board_id/comments' => 'boards#index'
+
+  resources :boards do
+    resources :comments
+  end
+
   # get 'users/index'
   # get 'users/show'
   # get 'boards/index'
   # get 'boards/show'
 
-  # get 'boards/:id' => 'catalog#view'
 
-  resources :boards do
-    resource :comments
-  end
+  # get 'boards/:id' => 'catalog#view'
 
   get 'boards/getNearby/:lat/:lng' => 'boards#getNearby', :format => false, :lat => /.*/, :lng => /.*/
   get 'boards/detail/:id' => 'boards#detail'
@@ -21,8 +24,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  root :to => 'boards#index'
+  #root :to => 'boards#index'
+  # root 'boards#index'
 
+  root :controller => 'boards', :action => 'index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

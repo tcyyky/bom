@@ -9,7 +9,6 @@
 	<div class="section">
 
 
-
 		<div class="flipper">
 
 			<div class="front">
@@ -85,31 +84,18 @@
 					</div>
 
 
-
+          <% if :board_id.empty? then %>
 					<div class="comment">
-						<div class="comment-body">
-							面白い!
-						</div>
-						<div class="comment-foot">
-							名無しさん
-						</div>
-						<hr>
-						<div class="comment-body">
-							最高!
-						</div>
-						<div class="comment-foot">
-							もうせ
-						</div>
-						<hr>
+
+						<%= render @board.comments %>
 					</div>
 
 					<div class="addcomment">
 						<form action="">
-							<input type="text" placeholder="コメントを入力" id="commentinput">
-							<input type="submit" value="投稿">
+							<%= render "comments/form" %>
 						</form>
 					</div>
-
+          <% end %>
 
 
 				</div>

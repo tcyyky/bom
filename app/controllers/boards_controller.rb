@@ -6,7 +6,8 @@ class BoardsController < ApplicationController
 	# GET /
 	def index
     @boards = Board.all
-		render
+		@board = Board.new
+    render
 	end
 
 	# GET /boards/getNearbyBoards/:lat/:lng
@@ -84,7 +85,6 @@ class BoardsController < ApplicationController
 
   # GET /users/1/edit
   def edit
-
   end
 
   # POST /boards
