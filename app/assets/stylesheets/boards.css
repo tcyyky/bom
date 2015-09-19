@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
 
-#map { 
+#map {
 	height: 100%;
 	width: 100%;
 	z-index: 1;
@@ -25,7 +25,7 @@
   top: 10px;
   right: 10px;
 
-  overflow: visible;  
+  overflow: visible;
   width: 100px;
   height: 50px;
   background-color: #fff;
@@ -33,14 +33,14 @@
   border-style: solid;
   margin-bottom: 3px;
   border-radius: 5px;
-  
+
   font-family: 'Noto Sans Japanese', serif;
   font-color:#ccc;
-  
+
 }
 
 .counter {
-  overflow: visible;  
+  overflow: visible;
   width: 35px;
   height: 27px;
   background-color: #fff;
@@ -48,11 +48,11 @@
   border-style: solid;
   margin-bottom: 10px;
   border-radius: 5px;
-  
+
   font-family: 'Noto Sans Japanese', serif;
   font-size:20px;
   font-color:#ccc;
-  
+
 }
 
 #good-count{
@@ -226,6 +226,18 @@
 .comment-foot{
 	font-size: 10px;
 	text-align: right;
+
+}
+
+#displaycomment {
+  text-align: left;
+  font-size: 14px;
+}
+
+#username {
+  text-align: right;
+  font-size: 10px;
+
 }
 
 .addcomment{

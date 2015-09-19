@@ -26,7 +26,7 @@
 					<div id="hyoushiki-img-2"><img src="/assets/UI-kanban-2.png" width="250" /></div>
 
 					<div id="caption">
-						<p class="board-caption">○○注意ああああああああ</p>
+						<p class="board-caption"><%= @board.caption %></p>
 					</div>
 
 
@@ -80,20 +80,34 @@
 					<div id="ura-hyoushiki-img-2"><img src="/assets/UI-kanban-2.png" width="150" /></div>
 
 					<div id="ura-caption">
-						<p class="board-caption">○○注意ああああああああ</p>
+						<p class="board-caption"><%= @board.caption %></p>
 					</div>
 
 
+          <div class="comment">
+            <div class="comment-body">
+							面白い!
+						</div>
+						<div class="comment-foot">
+							名無しさん
+						</div>
+						<hr>
+						<div class="comment-body">
+							最高!
+						</div>
+						<div class="comment-foot">
+							もうせ
+						</div>
+						<hr>
 
-					<div class="comment">
-
-
-					</div>
+            <div id="displaycomment"></div>
+            <div id="username"></div>
+          </div>
 
 					<div class="addcomment">
-						<form action="">
 
-						</form>
+            <input type="text" maxlength='15' id="inputcomment">
+            <button onclick="comment()">投稿</button>
 					</div>
 
 

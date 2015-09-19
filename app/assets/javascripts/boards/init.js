@@ -37,3 +37,10 @@ $("#bad-button").click(function() {
 });
 
 })
+
+function comment(){
+  var text = document.getElementById("inputcomment").value;
+  document.getElementById("displaycomment").innerHTML = text;
+  var text2 = "名無しさん<br><hr>";
+  document.getElementById("username").innerHTML = text2;
+}
