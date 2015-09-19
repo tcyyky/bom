@@ -72,9 +72,11 @@ class BoardsController < ApplicationController
   end
 
 
-  # GET /boards/new
+  # GET /boards/new/:lat/:lng
   def new
     @board = Board.new
+    @lat = params[:lat]
+    @lng = params[:lng]
   end
 
   # GET /users/1/edit

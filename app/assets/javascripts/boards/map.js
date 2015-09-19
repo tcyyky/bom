@@ -203,4 +203,9 @@ function locationDisabled(){
   $("map")[0].innerHTML =  "位置情報が利用できません";
 }
 
+$("#build-button").click(function(){
+  alert(myPos.getPosition().lat());
+    window.location.href = '/boards/new/'+myPos.getPosition().lat()+'/'+myPos.getPosition().lng();
+})
+
 });

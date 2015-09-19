@@ -1,8 +1,8 @@
 <%= javascript_include_tag "new/jquery-migrate-1.2.1.min.js", "new/jquery-ui.js", "slick/slick.min.js" %>
 <%= stylesheet_link_tag "new.css", "slick.css", "slick-theme.css" %>
 
-<span id="latitude" >x</span>
-<span id="longitude" >y</span>
+<span id="latitude" ><%= @lat %></span>
+<span id="longitude" ><%= @lng %></span>
 
 <div id="canvas">
     <canvas id="canvasElement" width="400" height="400"></canvas>
