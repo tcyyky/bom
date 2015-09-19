@@ -7,11 +7,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-@boards = Board.new
-@boards.image = "https://dl.dropboxusercontent.com/s/n4bbx3nt3uu35zq/asou_kumiko.jpg"
-@boards.caption = "麻生久美子"
-@boards.latitude = ""
-@boards.longitude = ""
-@boards.good = 1
-@boards.bad = 0
-@boards.username = "yorisilo"
+# @boards = Board.new
+# @boards.image_url = ""
+# @boards.caption = "麻生久美子"
+# @boards.latitude = ""
+# @boards.longitude = ""
+# @boards.good = 1
+# @boards.bad = 0
+# @boards.username = "yorisilo"
+
+
+#Board.create()

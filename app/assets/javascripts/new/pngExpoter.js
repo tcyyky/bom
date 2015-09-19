@@ -40,7 +40,8 @@ function change_board(num) {
 
         img.onload = (function() {
             //ctx.drawImage(img, 0, 0, 400, 400);
-            displayImg[0] = img;
+          displayImg[0] = img;
+
         });
         img.src = board[0];
         //img.crossOrigin = "Anonymous";
@@ -61,7 +62,10 @@ function change_board(num) {
         img.src = board[2];
         //img.crossOrigin = "Anonymous";
     }
-    display();
+  display();
+  var back_type = Number(num) -1;
+  $("#board_back_type").val(back_type);
+
 }
 
 
@@ -186,13 +190,13 @@ $("#canvas_output").on("click", function () {
   $("#board_image").val("");
   $("#board_remote_image_url").val(image);
 
-  var caption, latitude, longitude;
+  var caption, latitude, longitude, back_type;
   caption = document.getElementById("caption").value;
   latitude = document.getElementById("latitude").innerHTML;
   longitude = document.getElementById("longitude").innerHTML;
-  $("#board_caption").val(caption); //初期化
+  $("#board_caption").val(caption);
   $("#board_latitude").val(latitude);
-  $("#board_longitude").val(latitude);
+  $("#board_longitude").val(longitude);
   _form.submit();
 });
 
