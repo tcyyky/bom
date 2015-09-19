@@ -22,9 +22,13 @@
     </p>
 
     <p>
-      <%= f.label :remote_image_url, "or image URL" %>
+      <%= f.label :remote_image_url, "base64 format" %>
       <%= f.text_field :remote_image_url, placeholder: "http://hogehoge..." %>
-      <!-- https://dl.dropboxusercontent.com/s/n4bbx3nt3uu35zq/asou_kumiko.jpg -->
+    </p>
+
+    <p>
+      <%= f.label :caption %>
+      <%= f.text_field :caption , placeholder: "うんこ落ちてる" %>
     </p>
 
     <p>

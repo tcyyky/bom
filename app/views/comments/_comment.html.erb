@@ -1,0 +1,10 @@
+<div class="comment-body">
+	<%= simple_format comment.body %>
+</div>
+<div class="comment-foot">
+	名無しさん
+</div>
+<p>
+  <%= link_to 'Destroy a Comment', [comment.board, comment], method: :delete, data: { confirm: 'Are you sure destroy a comment?' } %>
+</p>
+<hr>
